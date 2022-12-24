@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/pages/home_ucell.dart';
 
 import 'home.dart';
@@ -15,6 +17,7 @@ class MobiuzHome_page extends StatefulWidget {
 }
 
 class _MobiuzHome_pageState extends State<MobiuzHome_page> {
+  final Uri _url = Uri.parse("https://mobi.uz/uz/");
   @override
   int _page = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
@@ -246,7 +249,9 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                           size: 20,
                         ),
                         TextButton(
-                            onPressed: null,
+                            onPressed: () {
+                              FlutterPhoneDirectCaller.callNumber("0890");
+                            },
                             child: Text(
                               "Operator",
                               style:
@@ -263,7 +268,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                           width: 20,
                         ),
                         TextButton(
-                          onPressed: null,
+                          onPressed: _launchUrl,
                           child: Text("Kabinet",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 20)),
@@ -446,5 +451,11 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
   }
 }

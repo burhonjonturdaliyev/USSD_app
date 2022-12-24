@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_final_fields, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/pages/home_beeline.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
 import 'home.dart';
@@ -14,13 +18,16 @@ class UcellHome_page extends StatefulWidget {
 
 class _UcellHome_pageState extends State<UcellHome_page> {
   @override
+  final Uri _url = Uri.parse("https://ucell.uz/uz/subscribers");
   int _page = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   Widget build(BuildContext context) {
     return Scaffold(
+      // ignore: duplicate_ignore
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 12, 1, 51),
         centerTitle: true,
+        // ignore: prefer_const_constructors
         title: Text(
           "USSD kodlar",
           style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
@@ -32,6 +39,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
         key: _bottomNavigationKey,
         index: 0,
         height: 55.0,
+        // ignore: prefer_const_literals_to_create_immutables
         items: <Widget>[
           Icon(
             Icons.home,
@@ -80,6 +88,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         border: Border.all(
                             width: 1,
                             color: Color.fromARGB(255, 181, 173, 173)),
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -97,6 +106,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
                             Text(
                               "Ucell",
@@ -112,6 +122,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
                             Text("Raqamli mobil aloqa operatori!")
                           ],
@@ -130,6 +141,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
@@ -153,6 +165,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
@@ -176,6 +189,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: null,
@@ -193,6 +207,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
@@ -223,6 +238,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: Color.fromARGB(255, 12, 1, 51),
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -242,7 +258,9 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                           size: 20,
                         ),
                         TextButton(
-                            onPressed: null,
+                            onPressed: () {
+                              FlutterPhoneDirectCaller.callNumber("8123");
+                            },
                             child: Text(
                               "Operator",
                               style:
@@ -259,7 +277,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                           width: 20,
                         ),
                         TextButton(
-                          onPressed: null,
+                          onPressed: _launchUrl,
                           child: Text("Kabinet",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 20)),
@@ -280,6 +298,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                // ignore: prefer_const_literals_to_create_immutables
                 children: <Widget>[
                   SizedBox(
                     width: 10,
@@ -300,6 +319,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -322,6 +342,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -349,6 +370,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -371,6 +393,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -398,6 +421,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -420,6 +444,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -442,5 +467,11 @@ class _UcellHome_pageState extends State<UcellHome_page> {
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
   }
 }

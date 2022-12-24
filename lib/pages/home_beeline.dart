@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
 import 'package:ussd_kodlari/pages/home_ucell.dart';
+
 import 'home.dart';
 
 class Beeline_Homepage extends StatefulWidget {
@@ -13,9 +16,10 @@ class Beeline_Homepage extends StatefulWidget {
 }
 
 class _Beeline_HomepageState extends State<Beeline_Homepage> {
+  final Uri _url = Uri.parse('https://beeline.uz/uz');
   @override
-  int _page = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -244,7 +248,9 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                           size: 20,
                         ),
                         TextButton(
-                            onPressed: null,
+                            onPressed: () {
+                              FlutterPhoneDirectCaller.callNumber("0611");
+                            },
                             child: Text(
                               "Operator",
                               style: TextStyle(
@@ -261,7 +267,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                           width: 20,
                         ),
                         TextButton(
-                          onPressed: null,
+                          onPressed: _launchUrl,
                           child: Text("Kabinet",
                               style: TextStyle(
                                   color: Colors.black87, fontSize: 20)),
@@ -444,5 +450,11 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
   }
 }

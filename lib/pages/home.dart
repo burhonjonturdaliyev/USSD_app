@@ -1,6 +1,11 @@
+// ignore_for_file: prefer_final_fields, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:ussd_kodlari/packages/tarif_rejalari.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
 
 import 'home_beeline.dart';
@@ -14,8 +19,10 @@ class Home_page extends StatefulWidget {
   State<Home_page> createState() => _Home_pageState();
 }
 
+// ignore: camel_case_types
 class _Home_pageState extends State<Home_page> {
   @override
+  final Uri _uri = Uri.parse("https://uztelecom.uz/index.php");
   int _page = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   Widget build(BuildContext context) {
@@ -23,6 +30,7 @@ class _Home_pageState extends State<Home_page> {
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
+        // ignore: prefer_const_constructors
         title: Text(
           "USSD kodlar",
           style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
@@ -34,6 +42,7 @@ class _Home_pageState extends State<Home_page> {
         key: _bottomNavigationKey,
         index: 0,
         height: 55.0,
+        // ignore: prefer_const_literals_to_create_immutables
         items: <Widget>[
           Icon(
             Icons.home,
@@ -82,6 +91,7 @@ class _Home_pageState extends State<Home_page> {
                         border: Border.all(
                             width: 1,
                             color: Color.fromARGB(255, 181, 173, 173)),
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -99,6 +109,7 @@ class _Home_pageState extends State<Home_page> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
                             Text(
                               "Uzmobile",
@@ -114,6 +125,7 @@ class _Home_pageState extends State<Home_page> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
                             Text("Ishonchli mobil aloqa operatori!")
                           ],
@@ -132,6 +144,7 @@ class _Home_pageState extends State<Home_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: null,
@@ -151,6 +164,7 @@ class _Home_pageState extends State<Home_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
@@ -176,6 +190,7 @@ class _Home_pageState extends State<Home_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
@@ -201,6 +216,7 @@ class _Home_pageState extends State<Home_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
@@ -231,6 +247,7 @@ class _Home_pageState extends State<Home_page> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.blue,
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -250,7 +267,9 @@ class _Home_pageState extends State<Home_page> {
                           size: 20,
                         ),
                         TextButton(
-                            onPressed: null,
+                            onPressed: () {
+                              FlutterPhoneDirectCaller.callNumber("1099");
+                            },
                             child: Text(
                               "Operator",
                               style:
@@ -267,7 +286,7 @@ class _Home_pageState extends State<Home_page> {
                           width: 20,
                         ),
                         TextButton(
-                          onPressed: null,
+                          onPressed: _launchUrl,
                           child: Text("Kabinet",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 20)),
@@ -288,6 +307,7 @@ class _Home_pageState extends State<Home_page> {
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                // ignore: prefer_const_literals_to_create_immutables
                 children: <Widget>[
                   SizedBox(
                     width: 10,
@@ -304,46 +324,57 @@ class _Home_pageState extends State<Home_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    child: Center(
-                        child: Text(
-                      "Tarif rejalari",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      elevation: MaterialStateProperty.all(20),
+                      minimumSize: MaterialStateProperty.all(
+                        Size(150, 100),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Tarif_rejalari(),
+                          ));
+                    },
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Image.asset(
+                            "Icons/Tarif_rejalari.png",
+                            width: 35,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text("Tarif\nrejalari")
+                        ]),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    child: Center(
-                        child: Text(
-                      "Internet \nto'plamlari",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                        elevation: MaterialStateProperty.all(20),
+                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
+                    onPressed: () {},
+                    child: Container(
+                      child: Row(children: [
+                        Image.asset(
+                          "Icons/internet.png",
+                          width: 28,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("Internet\nto'plamlari")
+                      ]),
+                    ),
                   )
                 ],
               ),
@@ -357,6 +388,7 @@ class _Home_pageState extends State<Home_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -379,6 +411,7 @@ class _Home_pageState extends State<Home_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -406,6 +439,7 @@ class _Home_pageState extends State<Home_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -428,6 +462,7 @@ class _Home_pageState extends State<Home_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               offset: Offset(0, 17),
@@ -450,5 +485,11 @@ class _Home_pageState extends State<Home_page> {
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_uri)) {
+      throw "Could not open this page $_uri";
+    }
   }
 }
