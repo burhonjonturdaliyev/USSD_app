@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ussd_kodlari/uzmobile/3_oylik.dart';
 import 'package:ussd_kodlari/uzmobile/oylik.dart';
 import 'package:ussd_kodlari/uzmobile/units.dart';
 
@@ -30,7 +31,7 @@ class Tarif_rejalari extends StatelessWidget {
           ]),
         ),
         body: const TabBarView(
-            children: <Widget>[Oylik(), Units(), Text("data"), Text("data")]),
+            children: <Widget>[Oylik(), Units(), Super_month(), Text("data")]),
       ),
     );
   }
