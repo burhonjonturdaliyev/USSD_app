@@ -6,6 +6,8 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/packages/tarif_rejalari.dart';
+import 'package:ussd_kodlari/packages/uzmobile_operator/internet_tuplamlari.dart';
+import 'package:ussd_kodlari/packages/uzmobile_operator/sms_tuplamlari.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
 
 import 'home_beeline.dart';
@@ -361,20 +363,23 @@ class _Home_pageState extends State<Home_page> {
                         backgroundColor: MaterialStateProperty.all(Colors.blue),
                         elevation: MaterialStateProperty.all(20),
                         minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: () {},
-                    child: Container(
-                      child: Row(children: [
-                        Image.asset(
-                          "Icons/internet.png",
-                          width: 28,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Internet\nto'plamlari")
-                      ]),
-                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Internet_tuplamlari()));
+                    },
+                    child: Row(children: [
+                      Image.asset(
+                        "Icons/internet.png",
+                        width: 28,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Internet\nto'plamlari")
+                    ]),
                   )
                 ],
               ),
@@ -383,50 +388,51 @@ class _Home_pageState extends State<Home_page> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    child: Center(
-                        child: Text(
-                      "SMS\nto'plamlari",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                        elevation: MaterialStateProperty.all(20),
+                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => sms_tuplamlari()));
+                    },
+                    child: Row(children: [
+                      Image.asset(
+                        "Icons/internet.png",
+                        width: 28,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("SMS\nto'plamlari")
+                    ]),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    child: Center(
-                        child: Text(
-                      "Daqiqa\nto'plamlari",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                  )
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                        elevation: MaterialStateProperty.all(20),
+                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
+                    onPressed: null,
+                    child: Row(children: [
+                      Image.asset(
+                        "Icons/internet.png",
+                        width: 28,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Daqiqa\nto'plamlari")
+                    ]),
+                  ),
                 ],
               ),
               SizedBox(
@@ -434,50 +440,46 @@ class _Home_pageState extends State<Home_page> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    child: Center(
-                        child: Text(
-                      "USSD kodlari",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                        elevation: MaterialStateProperty.all(20),
+                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
+                    onPressed: null,
+                    child: Row(children: [
+                      Image.asset(
+                        "Icons/internet.png",
+                        width: 28,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("USSD kodlari")
+                    ]),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    child: Center(
-                        child: Text(
-                      "Qo'shimcha\nxizmatlar",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                  )
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                        elevation: MaterialStateProperty.all(20),
+                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
+                    onPressed: null,
+                    child: Row(children: [
+                      Image.asset(
+                        "Icons/internet.png",
+                        width: 28,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Qo'shimcha\nxizmatlar")
+                    ]),
+                  ),
                 ],
               ),
             ],

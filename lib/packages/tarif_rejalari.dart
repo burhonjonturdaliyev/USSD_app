@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ussd_kodlari/uzmobile/3_oylik.dart';
+import 'package:ussd_kodlari/uzmobile/imtiyozli.dart';
 import 'package:ussd_kodlari/uzmobile/oylik.dart';
 import 'package:ussd_kodlari/uzmobile/units.dart';
 
@@ -15,7 +16,7 @@ class Tarif_rejalari extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Tarif rejalari"),
           backgroundColor: Colors.blue,
-          bottom: const TabBar(isScrollable: false, tabs: [
+          bottom: const TabBar(isScrollable: true, tabs: [
             Tab(
               child: Text("Oylik"),
             ),
@@ -31,7 +32,7 @@ class Tarif_rejalari extends StatelessWidget {
           ]),
         ),
         body: const TabBarView(
-            children: <Widget>[Oylik(), Units(), Super_month(), Text("data")]),
+            children: <Widget>[Oylik(), Units(), Super_month(), Imtiyozli()]),
       ),
     );
   }
