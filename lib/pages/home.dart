@@ -6,6 +6,7 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/packages/tarif_rejalari.dart';
+import 'package:ussd_kodlari/packages/uzmobile_operator/daqiqa_toplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/internet_tuplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/sms_tuplamlari.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
@@ -346,7 +347,7 @@ class _Home_pageState extends State<Home_page> {
                         children: [
                           Image.asset(
                             "Icons/Tarif_rejalari.png",
-                            width: 35,
+                            width: 43,
                             color: Colors.white,
                           ),
                           SizedBox(
@@ -372,7 +373,7 @@ class _Home_pageState extends State<Home_page> {
                     child: Row(children: [
                       Image.asset(
                         "Icons/internet.png",
-                        width: 28,
+                        width: 30,
                         color: Colors.white,
                       ),
                       SizedBox(
@@ -402,8 +403,8 @@ class _Home_pageState extends State<Home_page> {
                     },
                     child: Row(children: [
                       Image.asset(
-                        "Icons/internet.png",
-                        width: 28,
+                        "Icons/sms.png",
+                        width: 35,
                         color: Colors.white,
                       ),
                       SizedBox(
@@ -420,11 +421,17 @@ class _Home_pageState extends State<Home_page> {
                         backgroundColor: MaterialStateProperty.all(Colors.blue),
                         elevation: MaterialStateProperty.all(20),
                         minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: null,
+                    onPressed: (() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Daqiqa_tuplamlari(),
+                          ));
+                    }),
                     child: Row(children: [
                       Image.asset(
-                        "Icons/internet.png",
-                        width: 28,
+                        "Icons/daqiqa.png",
+                        width: 43,
                         color: Colors.white,
                       ),
                       SizedBox(

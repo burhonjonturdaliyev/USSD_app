@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ussd_kodlari/uzmobile/sms%20to\'plamlari/konstruktor.dart';
+import 'package:ussd_kodlari/uzmobile/sms%20to\'plamlari/kunlik.dart';
+import 'package:ussd_kodlari/uzmobile/sms%20to\'plamlari/xalqaro.dart';
+
+import '../../uzmobile/sms to\'plamlari/oylik_sms.dart';
 
 // ignore: camel_case_types
 class sms_tuplamlari extends StatelessWidget {
@@ -39,17 +44,17 @@ class sms_tuplamlari extends StatelessWidget {
             Tab(
               child: Text(
                 "Konstraktor",
-                style: TextStyle(fontSize: 13),
+                style: TextStyle(fontSize: 12),
               ),
             )
           ]),
         ),
         body: const TabBarView(
           children: [
-            Text("data"),
-            Text("data"),
-            Text("data"),
-            Text("data"),
+            Oylik_sms(),
+            SMS_kunlik(),
+            Xalqaro(),
+            Konstruktor(),
           ],
         ),
       ),

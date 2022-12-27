@@ -67,6 +67,8 @@ flutter:
   assets:
     - Icons/Tarif_rejalari.png
     - Icons/internet.png
+    - Icons/sms.png
+    - Icons/daqiqa.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
