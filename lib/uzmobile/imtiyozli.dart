@@ -98,36 +98,42 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
             child: Column(
               children: [
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("Abonent to'lovi: ${imtiyoz.money}")],
+                  children: [
+                    Expanded(child: Text("Abonent to'lovi: ${imtiyoz.money}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("O'zbekiston bo'yicha: ${imtiyoz.time}")],
+                  children: [
+                    Expanded(
+                        child: Text("O'zbekiston bo'yicha: ${imtiyoz.time}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("Tarmoq ichida: ${imtiyoz.addtime}")],
+                  children: [
+                    Expanded(child: Text("Tarmoq ichida: ${imtiyoz.addtime}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("Mobile internet: ${imtiyoz.internet}")],
+                  children: [
+                    Expanded(
+                        child: Text("Mobile internet: ${imtiyoz.internet}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("O'zbekiston bo'yicha: ${imtiyoz.sms}")],
+                  children: [
+                    Expanded(
+                        child: Text("O'zbekiston bo'yicha: ${imtiyoz.sms}"))
+                  ],
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
                   children: [Expanded(child: Text(imtiyoz.content))],
                 ),
                 SizedBox(
                   height: 15,
                 ),
-                // ignore: prefer_const_literals_to_create_immutables
                 Row(
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [

@@ -139,8 +139,10 @@ Widget oylik_item(Packages packages) {
                   // ignore: prefer_const_constructors
                   padding: EdgeInsets.all(10),
                   // ignore: prefer_const_constructors
-                  child: Text(
-                      "Abonent to'lovi oyiga - ${packages.price} so'm\nO'zbekiston bo'yicha daqiqalar ${packages.time} daqiqa\nMobile internet ${packages.internet} Mb\nO'zbekiston bo'yicha ${packages.sms} SMS\nLimitdan tashqari hammasi ${packages.limit_money} so'mdan"),
+                  child: Expanded(
+                    child: Text(
+                        "Abonent to'lovi oyiga - ${packages.price} so'm\nO'zbekiston bo'yicha daqiqalar ${packages.time} daqiqa\nMobile internet ${packages.internet} Mb\nO'zbekiston bo'yicha ${packages.sms} SMS\nLimitdan tashqari hammasi ${packages.limit_money} so'mdan"),
+                  ),
                 ),
               )
             ],

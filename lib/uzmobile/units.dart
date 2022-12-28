@@ -140,7 +140,9 @@ Widget Units_item(Unit_packages unit_packages) {
               children: [
                 Row(
                   children: [
-                    Text("Abonent to'lovi: ${unit_packages.monthly} so'm"),
+                    Expanded(
+                        child: Text(
+                            "Abonent to'lovi: ${unit_packages.monthly} so'm")),
                   ],
                 ),
                 SizedBox(
@@ -148,16 +150,16 @@ Widget Units_item(Unit_packages unit_packages) {
                 ),
                 Row(
                   children: [
-                    Text("Kiritilgan limit - ${unit_packages.limits} Units")
+                    Expanded(
+                        child: Text(
+                            "Kiritilgan limit - ${unit_packages.limits} Units"))
                   ],
                 ),
                 SizedBox(
                   height: 5,
                 ),
                 Row(
-                  children: [
-                    Expanded(child: Text("${unit_packages.contents}"))
-                  ],
+                  children: [Expanded(child: Text(unit_packages.contents))],
                 ),
                 SizedBox(
                   height: 5,
