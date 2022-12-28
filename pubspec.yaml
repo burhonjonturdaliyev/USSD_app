@@ -40,6 +40,7 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   flutter_phone_direct_caller: ^2.1.1
   url_launcher: ^6.1.7
+  google_nav_bar: ^5.0.6
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,8 @@ flutter:
     - Icons/internet.png
     - Icons/sms.png
     - Icons/daqiqa.png
+    - Icons/servise.png
+    - Icons/servise2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

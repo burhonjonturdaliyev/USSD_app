@@ -1,8 +1,11 @@
+// ignore_for_file: annotate_overrides, prefer_final_fields
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:ussd_kodlari/navigatorbar/bar.dart';
 import 'package:ussd_kodlari/pages/home_ucell.dart';
 
 import 'home.dart';
@@ -26,33 +29,36 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         centerTitle: true,
+        // ignore: prefer_const_constructors
         title: Text(
           "USSD kodlar",
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+          style: const TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
-        shadowColor: Color.fromARGB(96, 81, 70, 70),
+        shadowColor: const Color.fromARGB(96, 81, 70, 70),
         elevation: 10,
       ),
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: 0,
         height: 55.0,
+        // ignore: prefer_const_literals_to_create_immutables
         items: <Widget>[
-          Icon(
+          const Icon(
             Icons.home,
             size: 30,
             color: Colors.white,
           ),
-          Icon(
+          const Icon(
             Icons.contact_page,
             size: 30,
             color: Colors.white,
           ),
-          Icon(
+          const Icon(
             Icons.perm_device_information_outlined,
             size: 30,
             color: Colors.white,
           ),
+          // ignore: prefer_const_constructors
           Icon(
             Icons.perm_identity,
             size: 30,
@@ -63,7 +69,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
         buttonBackgroundColor: Colors.red,
         backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 500),
+        animationDuration: const Duration(milliseconds: 500),
         onTap: null,
         letIndexChange: (index) => true,
       ),
@@ -72,6 +78,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 20,
               ),
@@ -84,16 +91,18 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     decoration: BoxDecoration(
                         border: Border.all(
                             width: 1,
-                            color: Color.fromARGB(255, 181, 173, 173)),
+                            color: const Color.fromARGB(255, 181, 173, 173)),
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 23,
                               spreadRadius: -13,
                               color: Colors.black54)
                         ],
                         borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 255, 255, 255)),
+                        color: const Color.fromARGB(255, 255, 255, 255)),
                     child: Center(
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -102,23 +111,26 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
+                            // ignore: prefer_const_constructors
                             Text(
                               "Mobiuz",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.red,
                                 fontSize: 25,
                               ),
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
-                            Text("Sifatli mobil aloqa operatori!")
+                            const Text("Sifatli mobil aloqa operatori!")
                           ],
                         )
                       ],
@@ -126,6 +138,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                   )
                 ],
               ),
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 20,
               ),
@@ -135,16 +148,17 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        const Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Home_page()));
+                            MaterialPageRoute(builder: (context) => Bar()),
+                            (route) => false);
                       },
-                      child: Text(
+                      child: const Text(
                         "Uzmobile",
                         style: TextStyle(color: Colors.blue, fontSize: 11),
                       ),
@@ -152,66 +166,77 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     backgroundColor: Colors.white,
                     elevation: 10,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    backgroundColor: Colors.red,
+                    elevation: 10,
+                    // ignore: sort_child_properties_last
+                    // ignore: prefer_const_constructors
                     child: Center(
-                        child: TextButton(
+                        child: const TextButton(
                       onPressed: null,
                       child: Text(
                         "Mobiuz",
                         style: TextStyle(color: Colors.white, fontSize: 11),
                       ),
                     )),
-                    backgroundColor: Colors.red,
-                    elevation: 10,
                   ),
+                  // ignore: prefer_const_constructors
                   SizedBox(
                     width: 20,
                   ),
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        const Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => UcellHome_page()));
+                                builder: (context) => const UcellHome_page()),
+                            (route) => false);
                       },
+                      // ignore: prefer_const_constructors
                       child: Text(
                         "Ucell",
+                        // ignore: prefer_const_constructors
                         style: TextStyle(
-                            color: Color.fromARGB(255, 12, 1, 51),
+                            color: const Color.fromARGB(255, 12, 1, 51),
                             fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,
                     elevation: 10,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    // ignore: sort_child_properties_last
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        const Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Beeline_Homepage()));
+                                builder: (context) => const Beeline_Homepage()),
+                            (route) => false);
                       },
+                      // ignore: prefer_const_constructors
                       child: Text(
                         "Beeline",
-                        style: TextStyle(color: Colors.yellow, fontSize: 11),
+                        style:
+                            const TextStyle(color: Colors.yellow, fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,
@@ -219,6 +244,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                   ),
                 ],
               ),
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 20,
               ),
@@ -230,9 +256,11 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.red,
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 23,
                               spreadRadius: -13,
                               color: Colors.black54)
@@ -240,9 +268,11 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     child: Center(
                         child: Row(
                       children: <Widget>[
+                        // ignore: prefer_const_constructors
                         SizedBox(
                           width: 10,
                         ),
+                        // ignore: prefer_const_constructors
                         Icon(
                           Icons.call,
                           color: Colors.white,
@@ -252,32 +282,39 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                             onPressed: () {
                               FlutterPhoneDirectCaller.callNumber("0890");
                             },
+                            // ignore: prefer_const_constructors
                             child: Text(
                               "Operator",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 20),
                             )),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
+                        // ignore: prefer_const_constructors
                         Text(
                           "|",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 20),
                         ),
+                        // ignore: prefer_const_constructors
                         SizedBox(
                           width: 20,
                         ),
                         TextButton(
                           onPressed: _launchUrl,
+                          // ignore: prefer_const_constructors
                           child: Text("Kabinet",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20)),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 20)),
                         ),
+                        // ignore: prefer_const_constructors
                         Icon(
                           Icons.perm_identity,
                           color: Colors.white,
                           size: 20,
                         ),
+                        // ignore: prefer_const_constructors
                         SizedBox(
                           width: 10,
                         )
@@ -286,69 +323,82 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                // ignore: prefer_const_literals_to_create_immutables
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
+                  // ignore: prefer_const_constructors
                   Text(
                     "Operator xizmatlari",
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    style: const TextStyle(color: Colors.black, fontSize: 20),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.red),
-                    child: Center(
-                        child: Text(
-                      "Tarif rejalari",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            // ignore: prefer_const_constructors
+                            BoxShadow(
+                                offset: const Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.red),
+                      // ignore: prefer_const_constructors
+                      child: Center(
+                          // ignore: prefer_const_constructors
+                          child: Text(
+                        "Tarif rejalari",
+                        style: const TextStyle(color: Colors.white),
+                      )),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 40,
                   ),
                   Container(
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
                               color: Colors.black54)
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.red),
+                    // ignore: prefer_const_constructors
                     child: Center(
+                        // ignore: prefer_const_constructors
                         child: Text(
                       "Internet \nto'plamlari",
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     )),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -358,7 +408,9 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
@@ -367,12 +419,14 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.red),
+                    // ignore: prefer_const_constructors
                     child: Center(
-                        child: Text(
+                        child: const Text(
                       "SMS\nto'plamlari",
                       style: TextStyle(color: Colors.white),
                     )),
                   ),
+                  // ignore: prefer_const_constructors
                   SizedBox(
                     width: 40,
                   ),
@@ -380,23 +434,27 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
                               color: Colors.black54)
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.red),
+                    // ignore: prefer_const_constructors
                     child: Center(
-                        child: Text(
+                        child: const Text(
                       "Daqiqa\nto'plamlari",
                       style: TextStyle(color: Colors.white),
                     )),
                   )
                 ],
               ),
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 30,
               ),
@@ -407,21 +465,26 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
                               color: Colors.black54)
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.red),
+                    // ignore: prefer_const_constructors
                     child: Center(
+                        // ignore: prefer_const_constructors
                         child: Text(
                       "USSD kodlari",
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     )),
                   ),
+                  // ignore: prefer_const_constructors
                   SizedBox(
                     width: 40,
                   ),
@@ -429,7 +492,9 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
+                          // ignore: prefer_const_constructors
                           BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
@@ -438,10 +503,12 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.red),
+                    // ignore: prefer_const_constructors
                     child: Center(
+                        // ignore: prefer_const_constructors
                         child: Text(
                       "Qo'shimcha\nxizmatlar",
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     )),
                   )
                 ],

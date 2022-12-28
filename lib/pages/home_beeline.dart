@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,7 @@ import 'package:ussd_kodlari/pages/home_ucell.dart';
 
 import 'home.dart';
 
+// ignore: camel_case_types
 class Beeline_Homepage extends StatefulWidget {
   const Beeline_Homepage({super.key});
 
@@ -15,44 +18,46 @@ class Beeline_Homepage extends StatefulWidget {
   State<Beeline_Homepage> createState() => _Beeline_HomepageState();
 }
 
+// ignore: camel_case_types
 class _Beeline_HomepageState extends State<Beeline_Homepage> {
   final Uri _url = Uri.parse('https://beeline.uz/uz');
-  @override
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         centerTitle: true,
+        // ignore: prefer_const_constructors
         title: Text(
           "USSD kodlar",
-          style: TextStyle(color: Colors.black87),
+          style: const TextStyle(color: Colors.black87),
         ),
-        shadowColor: Color.fromARGB(96, 81, 70, 70),
+        shadowColor: const Color.fromARGB(96, 81, 70, 70),
         elevation: 10,
       ),
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: 0,
         height: 55.0,
+        // ignore: prefer_const_literals_to_create_immutables
         items: <Widget>[
-          Icon(
+          const Icon(
             Icons.home,
             size: 30,
             color: Colors.black87,
           ),
-          Icon(
+          const Icon(
             Icons.contact_page,
             size: 30,
             color: Colors.black87,
           ),
-          Icon(
+          const Icon(
             Icons.perm_device_information_outlined,
             size: 30,
             color: Colors.black87,
           ),
-          Icon(
+          const Icon(
             Icons.perm_identity,
             size: 30,
             color: Colors.black87,
@@ -62,7 +67,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
         buttonBackgroundColor: Colors.yellow,
         backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 500),
+        animationDuration: const Duration(milliseconds: 500),
         onTap: null,
         letIndexChange: (index) => true,
       ),
@@ -71,7 +76,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -83,16 +88,17 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     decoration: BoxDecoration(
                         border: Border.all(
                             width: 1,
-                            color: Color.fromARGB(255, 181, 173, 173)),
+                            color: const Color.fromARGB(255, 181, 173, 173)),
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 23,
                               spreadRadius: -13,
                               color: Colors.black54)
                         ],
                         borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 255, 255, 255)),
+                        color: const Color.fromARGB(255, 255, 255, 255)),
                     child: Center(
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,8 +107,9 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
-                            Text(
+                            const Text(
                               "Beeline",
                               style: TextStyle(
                                 color: Colors.yellow,
@@ -111,13 +118,15 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
-                            Text("Sifatli va ishonchli mobil aloqa operatori!")
+                            const Text(
+                                "Sifatli va ishonchli mobil aloqa operatori!")
                           ],
                         )
                       ],
@@ -125,7 +134,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -134,78 +143,83 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    backgroundColor: Colors.white,
+                    elevation: 10,
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        const Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Home_page()));
+                                builder: (context) => const Home_page()),
+                            (route) => false);
                       },
-                      child: Text(
+                      child: const Text(
                         "Uzmobile",
                         style: TextStyle(color: Colors.blue, fontSize: 11),
                       ),
                     )),
-                    backgroundColor: Colors.white,
-                    elevation: 10,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    backgroundColor: Colors.white,
+                    elevation: 10,
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        const Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MobiuzHome_page()));
+                                builder: (context) => const MobiuzHome_page()),
+                            (route) => false);
                       },
-                      child: Text(
+                      child: const Text(
                         "Mobiuz",
                         style: TextStyle(color: Colors.red, fontSize: 11),
                       ),
                     )),
-                    backgroundColor: Colors.white,
-                    elevation: 10,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   CircularProfileAvatar(
                     '',
                     radius: 35,
+                    backgroundColor: Colors.white,
+                    elevation: 10,
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        const Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => UcellHome_page()));
+                                builder: (context) => const UcellHome_page()),
+                            (route) => false);
                       },
-                      child: Text(
+                      child: const Text(
                         "Ucell",
                         style: TextStyle(
                             color: Color.fromARGB(255, 12, 1, 51),
                             fontSize: 11),
                       ),
                     )),
-                    backgroundColor: Colors.white,
-                    elevation: 10,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   CircularProfileAvatar(
                     '',
                     radius: 35,
-                    child: Center(
+                    backgroundColor: Colors.yellow,
+                    elevation: 10,
+                    child: const Center(
                         child: TextButton(
                       onPressed: null,
                       child: Text(
@@ -213,12 +227,10 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         style: TextStyle(color: Colors.black, fontSize: 11),
                       ),
                     )),
-                    backgroundColor: Colors.yellow,
-                    elevation: 10,
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -230,7 +242,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.yellow,
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 23,
                               spreadRadius: -13,
@@ -239,10 +251,10 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     child: Center(
                         child: Row(
                       children: <Widget>[
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.call,
                           color: Colors.black87,
                           size: 20,
@@ -251,33 +263,33 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                             onPressed: () {
                               FlutterPhoneDirectCaller.callNumber("0611");
                             },
-                            child: Text(
+                            child: const Text(
                               "Operator",
                               style: TextStyle(
                                   color: Colors.black87, fontSize: 20),
                             )),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text(
+                        const Text(
                           "|",
                           style: TextStyle(color: Colors.black87, fontSize: 20),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         TextButton(
                           onPressed: _launchUrl,
-                          child: Text("Kabinet",
+                          child: const Text("Kabinet",
                               style: TextStyle(
                                   color: Colors.black87, fontSize: 20)),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.perm_identity,
                           color: Colors.black87,
                           size: 20,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         )
                       ],
@@ -285,20 +297,20 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text(
+                  const Text(
                     "Operator xizmatlari",
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -309,7 +321,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     width: 150,
                     decoration: BoxDecoration(
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
@@ -317,13 +329,13 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.yellow),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "Tarif rejalari",
                       style: TextStyle(color: Colors.black),
                     )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 40,
                   ),
                   Container(
@@ -331,7 +343,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     height: 100,
                     decoration: BoxDecoration(
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
@@ -339,7 +351,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.yellow),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "Internet \nto'plamlari",
                       style: TextStyle(color: Colors.black),
@@ -347,7 +359,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -358,7 +370,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     width: 150,
                     decoration: BoxDecoration(
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
@@ -366,13 +378,13 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.yellow),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "SMS\nto'plamlari",
                       style: TextStyle(color: Colors.black),
                     )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 40,
                   ),
                   Container(
@@ -380,7 +392,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     height: 100,
                     decoration: BoxDecoration(
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
@@ -388,7 +400,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.yellow),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "Daqiqa\nto'plamlari",
                       style: TextStyle(color: Colors.black),
@@ -396,7 +408,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -407,7 +419,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     width: 150,
                     decoration: BoxDecoration(
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
@@ -415,13 +427,13 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.yellow),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "USSD kodlari",
                       style: TextStyle(color: Colors.black),
                     )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 40,
                   ),
                   Container(
@@ -429,7 +441,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                     height: 100,
                     decoration: BoxDecoration(
                         boxShadow: [
-                          BoxShadow(
+                          const BoxShadow(
                               offset: Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
@@ -437,7 +449,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         ],
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.yellow),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "Qo'shimcha\nxizmatlar",
                       style: TextStyle(color: Colors.black),

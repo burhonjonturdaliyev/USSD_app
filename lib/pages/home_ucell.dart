@@ -9,6 +9,7 @@ import 'package:ussd_kodlari/pages/home_beeline.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
 import 'home.dart';
 
+// ignore: camel_case_types
 class UcellHome_page extends StatefulWidget {
   const UcellHome_page({super.key});
 
@@ -16,8 +17,10 @@ class UcellHome_page extends StatefulWidget {
   State<UcellHome_page> createState() => _UcellHome_pageState();
 }
 
+// ignore: camel_case_types
 class _UcellHome_pageState extends State<UcellHome_page> {
   @override
+  // ignore: override_on_non_overriding_member
   final Uri _url = Uri.parse("https://ucell.uz/uz/subscribers");
   int _page = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
@@ -27,7 +30,6 @@ class _UcellHome_pageState extends State<UcellHome_page> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 12, 1, 51),
         centerTitle: true,
-        // ignore: prefer_const_constructors
         title: Text(
           "USSD kodlar",
           style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
@@ -145,11 +147,12 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Home_page()));
+                                builder: (context) => const Home_page()),
+                            (route) => false);
                       },
                       child: Text(
                         "Uzmobile",
@@ -169,11 +172,12 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MobiuzHome_page()));
+                                builder: (context) => const MobiuzHome_page()),
+                            (route) => false);
                       },
                       child: Text(
                         "Mobiuz",
@@ -211,11 +215,12 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Beeline_Homepage()));
+                                builder: (context) => const Beeline_Homepage()),
+                            (route) => false);
                       },
                       child: Text(
                         "Beeline",

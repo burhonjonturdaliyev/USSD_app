@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
-import 'package:ussd_kodlari/pages/home.dart';
+import 'package:ussd_kodlari/navigatorbar/bar.dart';
 
 void main() {
   // ignore: prefer_const_constructors
@@ -9,6 +9,6 @@ void main() {
     debugShowCheckedModeBanner: false,
     title: "USSD kodlari",
     color: Colors.white,
-    home: Home_page(),
+    home: Bar(),
   ));
 }

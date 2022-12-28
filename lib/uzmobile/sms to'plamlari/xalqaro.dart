@@ -53,8 +53,18 @@ Widget xalqaro_items(sms_oylik sms) {
     padding: const EdgeInsets.all(8.0),
     child: Container(
       decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(width: 1, color: Colors.grey)),
+          // ignore: prefer_const_literals_to_create_immutables
+          boxShadow: [
+            // ignore: prefer_const_constructors
+            BoxShadow(
+                color: Colors.black,
+                spreadRadius: -5,
+                blurRadius: 10,
+                offset: const Offset(0, 1))
+          ],
+          border: Border.all(width: 1, color: Colors.white30)),
       child: Column(
         children: [
           Padding(

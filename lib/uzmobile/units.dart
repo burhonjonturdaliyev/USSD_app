@@ -100,7 +100,14 @@ Widget Units_item(Unit_packages unit_packages) {
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(width: 1, color: Colors.grey)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black,
+                spreadRadius: -5,
+                blurRadius: 10,
+                offset: const Offset(0, 1))
+          ],
+          border: Border.all(width: 1, color: Colors.white30)),
       child: Column(
         children: [
           Padding(
