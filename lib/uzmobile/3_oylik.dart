@@ -102,24 +102,35 @@ Widget super_month_items(three_oylik three_month) {
             child: Column(
               children: [
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("Abonent to'lovi: ${three_month.monthly}")],
+                  children: [
+                    Expanded(
+                        child: Text("Abonent to'lovi: ${three_month.monthly}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("O'zbekiston bo'yicha: ${three_month.time}")],
+                  children: [
+                    Expanded(
+                        child:
+                            Text("O'zbekiston bo'yicha: ${three_month.time}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("Tarmoq ichida: ${three_month.addtime}")],
+                  children: [
+                    Expanded(
+                        child: Text("Tarmoq ichida: ${three_month.addtime}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("Mobile internet: ${three_month.internet}")],
+                  children: [
+                    Expanded(
+                        child: Text("Mobile internet: ${three_month.internet}"))
+                  ],
                 ),
                 Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [Text("O'zbekiston bo'yicha: ${three_month.sms}")],
+                  children: [
+                    Expanded(
+                        child: Text("O'zbekiston bo'yicha: ${three_month.sms}"))
+                  ],
                 ),
                 SizedBox(
                   height: 5,
