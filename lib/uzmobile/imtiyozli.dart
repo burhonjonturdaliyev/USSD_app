@@ -51,9 +51,17 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
     padding: const EdgeInsets.all(8.0),
     child: Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(width: 1, color: Colors.grey),
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          // ignore: prefer_const_literals_to_create_immutables
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black,
+                spreadRadius: -5,
+                blurRadius: 10,
+                offset: const Offset(0, 1))
+          ],
+          border: Border.all(width: 1, color: Colors.white30)),
       child: Column(
         children: [
           Padding(
@@ -123,8 +131,10 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
                 Row(
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    Text(
-                        "Ushbu xizmatni faqatgina rasmiy ofislardan ulatish mumkin")
+                    Expanded(
+                      child: Text(
+                          "Ushbu xizmatni faqatgina rasmiy ofislardan ulatish mumkin"),
+                    )
                   ],
                 )
               ],

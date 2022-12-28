@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_final_fields, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -9,6 +8,7 @@ import 'package:ussd_kodlari/packages/tarif_rejalari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/daqiqa_toplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/internet_tuplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/sms_tuplamlari.dart';
+import 'package:ussd_kodlari/packages/uzmobile_operator/ussd_kodlari/ussd_kodlari.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
 
 import 'home_beeline.dart';
@@ -24,57 +24,36 @@ class Home_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Home_pageState extends State<Home_page> {
-  @override
   final Uri _uri = Uri.parse("https://uztelecom.uz/index.php");
-  int _page = 0;
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+          // ignore: sort_child_properties_last
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              Text(
+                "Hello!",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white),
+              )
+            ],
+          ),
+          backgroundColor: Colors.blue),
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blue,
         centerTitle: true,
-        // ignore: prefer_const_constructors
         title: Text(
           "USSD kodlar",
           style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
         shadowColor: Color.fromARGB(96, 81, 70, 70),
         elevation: 10,
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        key: _bottomNavigationKey,
-        index: 0,
-        height: 55.0,
-        // ignore: prefer_const_literals_to_create_immutables
-        items: <Widget>[
-          Icon(
-            Icons.home,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.contact_page,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.perm_device_information_outlined,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.perm_identity,
-            size: 30,
-            color: Colors.white,
-          ),
-        ],
-        color: Colors.blueAccent,
-        buttonBackgroundColor: Colors.blueAccent,
-        backgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 500),
-        onTap: null,
-        letIndexChange: (index) => true,
       ),
       body: ListView(
         children: <Widget>[
@@ -171,11 +150,17 @@ class _Home_pageState extends State<Home_page> {
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        Duration(milliseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MobiuzHome_page()));
+                                builder: (context) => MobiuzHome_page()),
+                            (route) => false);
+
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => MobiuzHome_page()));
                       },
                       child: Text(
                         "Mobiuz",
@@ -197,11 +182,12 @@ class _Home_pageState extends State<Home_page> {
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => UcellHome_page()));
+                                builder: (context) => UcellHome_page()),
+                            (route) => false);
                       },
                       child: Text(
                         "Ucell",
@@ -223,11 +209,12 @@ class _Home_pageState extends State<Home_page> {
                     child: Center(
                         child: TextButton(
                       onPressed: () {
-                        Duration(microseconds: 1);
-                        Navigator.push(
+                        Duration(microseconds: 0);
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Beeline_Homepage()));
+                                builder: (context) => Beeline_Homepage()),
+                            (route) => false);
                       },
                       child: Text(
                         "Beeline",
@@ -327,60 +314,68 @@ class _Home_pageState extends State<Home_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.blue),
-                      elevation: MaterialStateProperty.all(20),
-                      minimumSize: MaterialStateProperty.all(
-                        Size(150, 100),
-                      ),
-                    ),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => Tarif_rejalari(),
                           ));
                     },
-                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          Image.asset(
-                            "Icons/Tarif_rejalari.png",
-                            width: 43,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text("Tarif\nrejalari")
-                        ]),
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            BoxShadow(
+                                offset: const Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.blue),
+                      child: Center(
+                          child: Text(
+                        "Tarif rejalari",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        elevation: MaterialStateProperty.all(20),
-                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: () {
-                      Navigator.push(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Internet_tuplamlari()));
+                              builder: (context) => Internet_tuplamlari()),
+                          (route) => true);
                     },
-                    child: Row(children: [
-                      Image.asset(
-                        "Icons/internet.png",
-                        width: 30,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("Internet\nto'plamlari")
-                    ]),
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.blue),
+                      child: Center(
+                          child: Text(
+                        "Internet \nto'plamlari",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -390,55 +385,68 @@ class _Home_pageState extends State<Home_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        elevation: MaterialStateProperty.all(20),
-                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: () {
-                      Navigator.push(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => sms_tuplamlari()));
+                              builder: (context) => sms_tuplamlari()),
+                          (route) => true);
                     },
-                    child: Row(children: [
-                      Image.asset(
-                        "Icons/sms.png",
-                        width: 35,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("SMS\nto'plamlari")
-                    ]),
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.blue),
+                      child: Center(
+                          child: Text(
+                        "SMS\nto'plamlari",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        elevation: MaterialStateProperty.all(20),
-                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: (() {
-                      Navigator.push(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Daqiqa_tuplamlari(),
-                          ));
-                    }),
-                    child: Row(children: [
-                      Image.asset(
-                        "Icons/daqiqa.png",
-                        width: 43,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("Daqiqa\nto'plamlari")
-                    ]),
+                              builder: (context) => Daqiqa_tuplamlari()),
+                          (route) => true);
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.blue),
+                      child: Center(
+                          child: Text(
+                        "Daqiqa\nto'plamlari",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   ),
                 ],
               ),
@@ -448,45 +456,69 @@ class _Home_pageState extends State<Home_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        elevation: MaterialStateProperty.all(20),
-                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: null,
-                    child: Row(children: [
-                      Image.asset(
-                        "Icons/internet.png",
-                        width: 28,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("USSD kodlari")
-                    ]),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => USSD_kodlari()),
+                          (route) => true);
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.blue),
+                      child: Center(
+                          child: Text(
+                        "USSD kodlari",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        elevation: MaterialStateProperty.all(20),
-                        minimumSize: MaterialStateProperty.all(Size(150, 100))),
-                    onPressed: null,
-                    child: Row(children: [
-                      Image.asset(
-                        "Icons/internet.png",
-                        width: 28,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("Qo'shimcha\nxizmatlar")
-                    ]),
-                  ),
+                  GestureDetector(
+                    // onTap: () {
+                    //   Navigator.pushAndRemoveUntil(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) => Internet_tuplamlari()),
+                    //       (route) => true);
+                    // },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.blue),
+                      child: Center(
+                          child: Text(
+                        "Qo'shimcha\nxizmatlar",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
+                  )
                 ],
               ),
             ],

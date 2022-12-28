@@ -1,0 +1,5 @@
+class foydali_models {
+  String name;
+  String code;
+  foydali_models({required this.name, required this.code});
+}

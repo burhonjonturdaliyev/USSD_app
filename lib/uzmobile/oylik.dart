@@ -79,39 +79,45 @@ Widget oylik_item(Packages packages) {
     padding: const EdgeInsets.symmetric(horizontal: 12.3, vertical: 10),
     child: Container(
       decoration: BoxDecoration(
-          border: Border.all(
-              width: 1,
-              // ignore: prefer_const_constructors
-              color: Color.fromARGB(255, 181, 173, 173)),
-          // ignore: prefer_const_literals_to_create_immutables
+          color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          // ignore: prefer_const_constructors
-          color: Color.fromARGB(255, 255, 255, 255)),
+          // ignore: prefer_const_literals_to_create_immutables
+          boxShadow: [
+            // ignore: prefer_const_constructors
+            BoxShadow(
+                color: Colors.black,
+                spreadRadius: -5,
+                blurRadius: 10,
+                offset: const Offset(0, 1))
+          ],
+          border: Border.all(width: 1, color: Colors.white30)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Padding(padding: EdgeInsets.fromLTRB(0, 3, 5, 3)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              // ignore: prefer_const_constructors
-              Icon(
-                Icons.save_alt_rounded,
-                color: Colors.blue,
-              ),
-              // ignore: prefer_const_constructors
-              Text(
-                "${packages.name}",
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
                 // ignore: prefer_const_constructors
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              // ignore: prefer_const_constructors
-              Icon(
-                Icons.short_text_rounded,
-                color: Colors.blue,
-              ),
-            ],
+                Icon(
+                  Icons.save_alt_rounded,
+                  color: Colors.blue,
+                ),
+                // ignore: prefer_const_constructors
+                Text(
+                  "${packages.name}",
+                  // ignore: prefer_const_constructors
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                // ignore: prefer_const_constructors
+                Icon(
+                  Icons.short_text_rounded,
+                  color: Colors.blue,
+                ),
+              ],
+            ),
           ),
           // ignore: prefer_const_constructors
           Divider(

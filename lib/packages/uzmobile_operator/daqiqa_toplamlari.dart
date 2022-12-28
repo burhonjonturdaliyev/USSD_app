@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ussd_kodlari/uzmobile/daqiqa/daqiqalar.dart';
+import 'package:ussd_kodlari/uzmobile/daqiqa/foydali_daqiqa.dart';
 import 'package:ussd_kodlari/uzmobile/daqiqa/konstruktor_daqiqa.dart';
 
 // ignore: camel_case_types
@@ -35,7 +36,7 @@ class Daqiqa_tuplamlari extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         body: TabBarView(
             // ignore: prefer_const_literals_to_create_immutables
-            children: [Daqiqalar_tp(), Konstruktor_daqiqa(), Text("data")]),
+            children: [Daqiqalar_tp(), Konstruktor_daqiqa(), Foydali_daqiqa()]),
       ),
     );
   }
