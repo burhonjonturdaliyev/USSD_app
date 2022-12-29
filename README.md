@@ -1,10 +1,10 @@
 # ussd_kodlari
 
-A new Flutter project.
+This app called USSD kodlari. Which means, It will help to connect packages in all operators. (Like Uzmobile, Mobiuz, Ucell, Beeline)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is very simple application. It is very helpfull for young coders. I hope this codes help to our future
 
 A few resources to get you started if this is your first Flutter project:
 
