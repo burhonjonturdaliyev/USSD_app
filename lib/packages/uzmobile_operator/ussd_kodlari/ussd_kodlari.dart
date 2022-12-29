@@ -48,6 +48,7 @@ class USSD_kodlari extends StatelessWidget {
   }
 }
 
+// ignore: non_constant_identifier_names
 Widget ussd_items(USSD_models ussd) {
   return Padding(
     padding: const EdgeInsets.all(8.0),

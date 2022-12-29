@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/packages/tarif_rejalari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/daqiqa_toplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/internet_tuplamlari.dart';
+import 'package:ussd_kodlari/packages/uzmobile_operator/qoshimcha_xizmatlar.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/sms_tuplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/ussd_kodlari/ussd_kodlari.dart';
 import 'package:ussd_kodlari/pages/home_mobiuz.dart';
@@ -29,6 +30,8 @@ class _Home_pageState extends State<Home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+          width: 250,
+
           // ignore: sort_child_properties_last
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -490,13 +493,13 @@ class _Home_pageState extends State<Home_page> {
                     width: 40,
                   ),
                   GestureDetector(
-                    // onTap: () {
-                    //   Navigator.pushAndRemoveUntil(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //           builder: (context) => Internet_tuplamlari()),
-                    //       (route) => true);
-                    // },
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Qoshimcha_xizmatlar()),
+                          (route) => true);
+                    },
                     child: Container(
                       width: 150,
                       height: 100,
