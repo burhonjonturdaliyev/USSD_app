@@ -1,15 +1,12 @@
 // ignore_for_file: annotate_overrides, prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
 import 'package:ussd_kodlari/navigatorbar/bar.dart';
-import 'package:ussd_kodlari/pages/home_ucell.dart';
-
-import 'home.dart';
-import 'home_beeline.dart';
+import 'package:ussd_kodlari/ucell_full/ucell_bar.dart';
 
 // ignore: camel_case_types
 class MobiuzHome_page extends StatefulWidget {
@@ -19,11 +16,10 @@ class MobiuzHome_page extends StatefulWidget {
   State<MobiuzHome_page> createState() => _MobiuzHome_pageState();
 }
 
+// ignore: camel_case_types
 class _MobiuzHome_pageState extends State<MobiuzHome_page> {
   final Uri _url = Uri.parse("https://mobi.uz/uz/");
   @override
-  int _page = 0;
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -36,42 +32,6 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
         ),
         shadowColor: const Color.fromARGB(96, 81, 70, 70),
         elevation: 10,
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        key: _bottomNavigationKey,
-        index: 0,
-        height: 55.0,
-        // ignore: prefer_const_literals_to_create_immutables
-        items: <Widget>[
-          const Icon(
-            Icons.home,
-            size: 30,
-            color: Colors.white,
-          ),
-          const Icon(
-            Icons.contact_page,
-            size: 30,
-            color: Colors.white,
-          ),
-          const Icon(
-            Icons.perm_device_information_outlined,
-            size: 30,
-            color: Colors.white,
-          ),
-          // ignore: prefer_const_constructors
-          Icon(
-            Icons.perm_identity,
-            size: 30,
-            color: Colors.white,
-          ),
-        ],
-        color: Colors.red,
-        buttonBackgroundColor: Colors.red,
-        backgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 500),
-        onTap: null,
-        letIndexChange: (index) => true,
       ),
       body: ListView(
         children: <Widget>[
@@ -200,16 +160,15 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const UcellHome_page()),
+                                builder: (context) => const BarUcell()),
                             (route) => false);
                       },
                       // ignore: prefer_const_constructors
                       child: Text(
                         "Ucell",
                         // ignore: prefer_const_constructors
-                        style: TextStyle(
-                            color: const Color.fromARGB(255, 12, 1, 51),
-                            fontSize: 11),
+                        style: const TextStyle(
+                            color: Color(0xff6b2d82), fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,
@@ -229,14 +188,14 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Beeline_Homepage()),
+                                builder: (context) => const BarBeeline()),
                             (route) => false);
                       },
                       // ignore: prefer_const_constructors
                       child: Text(
                         "Beeline",
-                        style:
-                            const TextStyle(color: Colors.yellow, fontSize: 11),
+                        style: const TextStyle(
+                            color: Color(0xffffc904), fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,
@@ -366,7 +325,8 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                           // ignore: prefer_const_constructors
                           child: Text(
                         "Tarif rejalari",
-                        style: const TextStyle(color: Colors.white),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
                       )),
                     ),
                   ),
@@ -393,7 +353,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         // ignore: prefer_const_constructors
                         child: Text(
                       "Internet \nto'plamlari",
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   )
                 ],
@@ -412,7 +372,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         boxShadow: [
                           // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
                               color: Colors.black54)
@@ -423,7 +383,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     child: Center(
                         child: const Text(
                       "SMS\nto'plamlari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   ),
                   // ignore: prefer_const_constructors
@@ -449,7 +409,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                     child: Center(
                         child: const Text(
                       "Daqiqa\nto'plamlari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   )
                 ],
@@ -481,7 +441,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         // ignore: prefer_const_constructors
                         child: Text(
                       "USSD kodlari",
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   ),
                   // ignore: prefer_const_constructors
@@ -496,7 +456,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         boxShadow: [
                           // ignore: prefer_const_constructors
                           BoxShadow(
-                              offset: Offset(0, 17),
+                              offset: const Offset(0, 17),
                               blurRadius: 15,
                               spreadRadius: -13,
                               color: Colors.black54)
@@ -508,7 +468,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         // ignore: prefer_const_constructors
                         child: Text(
                       "Qo'shimcha\nxizmatlar",
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   )
                 ],

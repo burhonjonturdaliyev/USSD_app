@@ -4,16 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Mobiuz_bar.dart';
+import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
 import 'package:ussd_kodlari/packages/tarif_rejalari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/daqiqa_toplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/internet_tuplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/qoshimcha_xizmatlar.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/sms_tuplamlari.dart';
 import 'package:ussd_kodlari/packages/uzmobile_operator/ussd_kodlari/ussd_kodlari.dart';
-import 'package:ussd_kodlari/pages/home_mobiuz.dart';
-
-import 'home_beeline.dart';
-import 'home_ucell.dart';
+import 'package:ussd_kodlari/ucell_full/ucell_bar.dart';
 
 // ignore: camel_case_types
 class Home_page extends StatefulWidget {
@@ -156,8 +155,7 @@ class _Home_pageState extends State<Home_page> {
                         Duration(milliseconds: 0);
                         Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => MobiuzHome_page()),
+                            MaterialPageRoute(builder: (context) => BarMobi()),
                             (route) => false);
 
                         // Navigator.push(
@@ -188,15 +186,13 @@ class _Home_pageState extends State<Home_page> {
                         Duration(microseconds: 0);
                         Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => UcellHome_page()),
+                            MaterialPageRoute(builder: (context) => BarUcell()),
                             (route) => false);
                       },
                       child: Text(
                         "Ucell",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 12, 1, 51),
-                            fontSize: 11),
+                        style:
+                            TextStyle(color: Color(0xff6b2d82), fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,
@@ -216,12 +212,13 @@ class _Home_pageState extends State<Home_page> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Beeline_Homepage()),
+                                builder: (context) => BarBeeline()),
                             (route) => false);
                       },
                       child: Text(
                         "Beeline",
-                        style: TextStyle(color: Colors.yellow, fontSize: 11),
+                        style:
+                            TextStyle(color: Color(0xffffc904), fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,

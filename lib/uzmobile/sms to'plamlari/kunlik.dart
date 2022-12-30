@@ -57,13 +57,9 @@ Widget sms_kunlik_items(sms_kun sms) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 Text(
                   sms.name,
                   style: TextStyle(
@@ -71,10 +67,6 @@ Widget sms_kunlik_items(sms_kun sms) {
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
-                Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),

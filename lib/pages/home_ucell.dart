@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_final_fields, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:ussd_kodlari/pages/home_beeline.dart';
-import 'package:ussd_kodlari/pages/home_mobiuz.dart';
-import 'home.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Mobiuz_bar.dart';
+import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
+import 'package:ussd_kodlari/navigatorbar/bar.dart';
 
 // ignore: camel_case_types
 class UcellHome_page extends StatefulWidget {
@@ -22,13 +21,12 @@ class _UcellHome_pageState extends State<UcellHome_page> {
   @override
   // ignore: override_on_non_overriding_member
   final Uri _url = Uri.parse("https://ucell.uz/uz/subscribers");
-  int _page = 0;
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       // ignore: duplicate_ignore
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 12, 1, 51),
+        backgroundColor: Color(0xff6b2d82),
         centerTitle: true,
         title: Text(
           "USSD kodlar",
@@ -36,41 +34,6 @@ class _UcellHome_pageState extends State<UcellHome_page> {
         ),
         shadowColor: Color.fromARGB(96, 81, 70, 70),
         elevation: 10,
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        key: _bottomNavigationKey,
-        index: 0,
-        height: 55.0,
-        // ignore: prefer_const_literals_to_create_immutables
-        items: <Widget>[
-          Icon(
-            Icons.home,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.contact_page,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.perm_device_information_outlined,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.perm_identity,
-            size: 30,
-            color: Colors.white,
-          ),
-        ],
-        color: Color.fromARGB(255, 12, 1, 51),
-        buttonBackgroundColor: Color.fromARGB(255, 12, 1, 51),
-        backgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 500),
-        onTap: null,
-        letIndexChange: (index) => true,
       ),
       body: ListView(
         children: <Widget>[
@@ -113,7 +76,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                             Text(
                               "Ucell",
                               style: TextStyle(
-                                color: Color.fromARGB(255, 12, 1, 51),
+                                color: Color(0xff6b2d82),
                                 fontSize: 25,
                               ),
                             )
@@ -151,7 +114,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Home_page()),
+                                builder: (context) => const Bar()),
                             (route) => false);
                       },
                       child: Text(
@@ -176,7 +139,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const MobiuzHome_page()),
+                                builder: (context) => const BarMobi()),
                             (route) => false);
                       },
                       child: Text(
@@ -202,7 +165,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         style: TextStyle(color: Colors.white, fontSize: 11),
                       ),
                     )),
-                    backgroundColor: Color.fromARGB(255, 12, 1, 51),
+                    backgroundColor: Color(0xff6b2d82),
                     elevation: 10,
                   ),
                   SizedBox(
@@ -219,12 +182,13 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Beeline_Homepage()),
+                                builder: (context) => const BarBeeline()),
                             (route) => false);
                       },
                       child: Text(
                         "Beeline",
-                        style: TextStyle(color: Colors.yellow, fontSize: 11),
+                        style:
+                            TextStyle(color: Color(0xffffc904), fontSize: 11),
                       ),
                     )),
                     backgroundColor: Colors.white,
@@ -242,7 +206,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: Color.fromARGB(255, 12, 1, 51),
+                        color: Color(0xff6b2d82),
                         // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
@@ -324,20 +288,21 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 12, 1, 51)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 15,
+                            spreadRadius: -13,
+                            color: Colors.black54)
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff6b2d82),
+                    ),
                     child: Center(
                         child: Text(
                       "Tarif rejalari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   ),
                   SizedBox(
@@ -347,20 +312,21 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 12, 1, 51)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 15,
+                            spreadRadius: -13,
+                            color: Colors.black54)
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff6b2d82),
+                    ),
                     child: Center(
                         child: Text(
                       "Internet \nto'plamlari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   )
                 ],
@@ -375,20 +341,21 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 12, 1, 51)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 15,
+                            spreadRadius: -13,
+                            color: Colors.black54)
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff6b2d82),
+                    ),
                     child: Center(
                         child: Text(
                       "SMS\nto'plamlari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   ),
                   SizedBox(
@@ -398,20 +365,21 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 12, 1, 51)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 15,
+                            spreadRadius: -13,
+                            color: Colors.black54)
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff6b2d82),
+                    ),
                     child: Center(
                         child: Text(
                       "Daqiqa\nto'plamlari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   )
                 ],
@@ -426,20 +394,21 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 12, 1, 51)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 15,
+                            spreadRadius: -13,
+                            color: Colors.black54)
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff6b2d82),
+                    ),
                     child: Center(
                         child: Text(
                       "USSD kodlari",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   ),
                   SizedBox(
@@ -449,20 +418,21 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                     width: 150,
                     height: 100,
                     decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 12, 1, 51)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 15,
+                            spreadRadius: -13,
+                            color: Colors.black54)
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff6b2d82),
+                    ),
                     child: Center(
                         child: Text(
                       "Qo'shimcha\nxizmatlar",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     )),
                   )
                 ],

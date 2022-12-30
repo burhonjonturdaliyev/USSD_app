@@ -70,14 +70,9 @@ Widget ussd_items(USSD_models ussd) {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              const Icon(
-                Icons.save_alt_outlined,
-                color: Colors.blue,
-              ),
-              // ignore: prefer_const_constructors
               Text(
                 ussd.name,
                 style: const TextStyle(
@@ -85,11 +80,6 @@ Widget ussd_items(USSD_models ussd) {
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
-              // ignore: prefer_const_constructors
-              Icon(
-                Icons.show_chart_outlined,
-                color: Colors.blue,
-              )
             ],
           ),
         ),

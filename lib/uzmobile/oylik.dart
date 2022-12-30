@@ -97,24 +97,14 @@ Widget oylik_item(Packages packages) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                // ignore: prefer_const_constructors
-                Icon(
-                  Icons.save_alt_rounded,
-                  color: Colors.blue,
-                ),
                 // ignore: prefer_const_constructors
                 Text(
                   "${packages.name}",
                   // ignore: prefer_const_constructors
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                // ignore: prefer_const_constructors
-                Icon(
-                  Icons.short_text_rounded,
-                  color: Colors.blue,
                 ),
               ],
             ),

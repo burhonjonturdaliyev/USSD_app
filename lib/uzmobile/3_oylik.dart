@@ -71,13 +71,9 @@ Widget super_month_items(three_oylik three_month) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 Text(
                   three_month.name,
                   style: TextStyle(
@@ -86,10 +82,6 @@ Widget super_month_items(three_oylik three_month) {
                     fontSize: 18,
                   ),
                 ),
-                Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),
