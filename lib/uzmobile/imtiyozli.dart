@@ -67,13 +67,9 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 Text(
                   imtiyoz.name,
                   style: TextStyle(
@@ -82,10 +78,6 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
                     fontSize: 18,
                   ),
                 ),
-                Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),

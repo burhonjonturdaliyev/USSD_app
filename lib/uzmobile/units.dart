@@ -113,20 +113,12 @@ Widget Units_item(Unit_packages unit_packages) {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 Text(
                   "UNITS ${unit_packages.package_name}",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
-                const Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),
