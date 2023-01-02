@@ -1,7 +1,6 @@
 // ignore: file_names
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ussd_kodlari/Mobiuz_full/Navigation%20panel/operator_mobi.dart';
 import 'package:ussd_kodlari/pages/home_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/ucell_navigation/foydali_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/ucell_navigation/operator_ucell.dart';
@@ -54,7 +53,7 @@ class _BarUcellState extends State<BarUcell> {
         buttonBackgroundColor: const Color(0xff6b2d82),
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 250),
+        animationDuration: const Duration(milliseconds: 300),
         onTap: ontab,
         letIndexChange: (index) => true,
       ),

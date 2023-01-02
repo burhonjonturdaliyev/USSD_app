@@ -53,7 +53,7 @@ class _BarMobiState extends State<BarMobi> {
         buttonBackgroundColor: Colors.red,
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 250),
+        animationDuration: const Duration(milliseconds: 300),
         onTap: ontab,
         letIndexChange: (index) => true,
       ),

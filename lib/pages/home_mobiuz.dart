@@ -8,6 +8,8 @@ import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
 import 'package:ussd_kodlari/navigatorbar/bar.dart';
 import 'package:ussd_kodlari/ucell_full/ucell_bar.dart';
 
+import '../Mobiuz_full/Operator xizmatlari/tarif rejalari/tarif_mobiuz.dart';
+
 // ignore: camel_case_types
 class MobiuzHome_page extends StatefulWidget {
   const MobiuzHome_page({super.key});
@@ -90,7 +92,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
-                            const Text("Sifatli mobil aloqa operatori!")
+                            const Text("Raqamli imkoniyatlar sari!")
                           ],
                         )
                       ],
@@ -115,7 +117,8 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                         const Duration(microseconds: 0);
                         Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (context) => Bar()),
+                            MaterialPageRoute(
+                                builder: (context) => const Bar()),
                             (route) => false);
                       },
                       child: const Text(
@@ -304,7 +307,12 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Tarif_Mobiuz()));
+                    },
                     child: Container(
                       height: 100,
                       width: 150,

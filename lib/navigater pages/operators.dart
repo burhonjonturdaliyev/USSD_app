@@ -45,6 +45,7 @@ class Operator extends StatelessWidget {
   }
 }
 
+// ignore: non_constant_identifier_names
 Widget operator_items(models_operator operator) {
   return Padding(
     padding: const EdgeInsets.all(8.0),

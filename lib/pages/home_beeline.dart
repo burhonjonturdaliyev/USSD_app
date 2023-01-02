@@ -85,8 +85,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            const Text(
-                                "Sifatli va ishonchli mobil aloqa operatori!")
+                            const Text("Yetakchi. Ishonchli! Innovatsion!")
                           ],
                         )
                       ],

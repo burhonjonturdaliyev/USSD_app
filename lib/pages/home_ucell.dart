@@ -89,7 +89,7 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
-                            Text("Raqamli mobil aloqa operatori!")
+                            Text("Hayotni yaxshilik sari o'zgartirib!")
                           ],
                         )
                       ],

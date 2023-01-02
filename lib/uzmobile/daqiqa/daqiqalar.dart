@@ -58,14 +58,9 @@ Widget daqiqalar_items(daqiqalar_model model) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                // ignore: prefer_const_constructors
-                Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 // ignore: prefer_const_constructors
                 Text(
                   model.name,
@@ -75,11 +70,6 @@ Widget daqiqalar_items(daqiqalar_model model) {
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
-                // ignore: prefer_const_constructors
-                Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),
