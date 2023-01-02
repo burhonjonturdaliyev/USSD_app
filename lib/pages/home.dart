@@ -25,6 +25,11 @@ class Home_page extends StatefulWidget {
 // ignore: camel_case_types
 class _Home_pageState extends State<Home_page> {
   final Uri _uri = Uri.parse("https://uztelecom.uz/index.php");
+  String name = "Uzmobile";
+  String info = "Ishonchli mobil aloqa operatori";
+  String operator = "1099";
+  String color = "blue";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +101,7 @@ class _Home_pageState extends State<Home_page> {
                           // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
                             Text(
-                              "Uzmobile",
+                              name,
                               style: TextStyle(
                                 color: Colors.blue,
                                 fontSize: 25,
@@ -110,9 +115,7 @@ class _Home_pageState extends State<Home_page> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           // ignore: prefer_const_literals_to_create_immutables
-                          children: <Widget>[
-                            Text("Ishonchli mobil aloqa operatori!")
-                          ],
+                          children: <Widget>[Text(info)],
                         )
                       ],
                     )),
@@ -258,7 +261,7 @@ class _Home_pageState extends State<Home_page> {
                         ),
                         TextButton(
                             onPressed: () {
-                              FlutterPhoneDirectCaller.callNumber("1099");
+                              FlutterPhoneDirectCaller.callNumber(operator);
                             },
                             child: Text(
                               "Operator",

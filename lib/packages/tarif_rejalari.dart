@@ -16,7 +16,7 @@ class Tarif_rejalari extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Tarif rejalari"),
           backgroundColor: Colors.blue,
-          bottom: const TabBar(isScrollable: true, tabs: [
+          bottom: const TabBar(isScrollable: false, tabs: [
             Tab(
               child: Text("Oylik"),
             ),

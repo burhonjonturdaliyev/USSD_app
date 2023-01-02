@@ -1,3 +1,4 @@
+// ignore: camel_case_types
 class super_internet {
   String name;
   String money;

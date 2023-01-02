@@ -1,3 +1,4 @@
+// ignore: camel_case_types
 class non_stop {
   String name;
   String money;

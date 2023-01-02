@@ -59,13 +59,9 @@ Widget konstruktor_daqiqa_items(daqiqalar_model model) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 // ignore: prefer_const_constructors
                 Text(
                   model.name,
@@ -74,10 +70,6 @@ Widget konstruktor_daqiqa_items(daqiqalar_model model) {
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
-                const Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),

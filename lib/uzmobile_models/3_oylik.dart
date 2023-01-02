@@ -1,3 +1,4 @@
+// ignore: camel_case_types
 class three_oylik {
   String name;
   String monthly;

@@ -54,7 +54,7 @@ class _BarState extends State<Bar> {
         buttonBackgroundColor: Colors.blue,
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 250),
+        animationDuration: Duration(milliseconds: 300),
         onTap: ontab,
         letIndexChange: (index) => true,
       ),

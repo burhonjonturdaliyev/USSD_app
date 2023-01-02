@@ -53,7 +53,7 @@ class _BarBeelineState extends State<BarBeeline> {
         buttonBackgroundColor: const Color(0xffffc904),
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 250),
+        animationDuration: const Duration(milliseconds: 300),
         onTap: ontab,
         letIndexChange: (index) => true,
       ),

@@ -1,3 +1,4 @@
+// ignore: camel_case_types
 class extra_imtiyoz {
   String name;
   String money;

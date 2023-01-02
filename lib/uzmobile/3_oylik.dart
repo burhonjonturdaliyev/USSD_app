@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:ussd_kodlari/uzmobile_models/3_oylik.dart';
@@ -59,11 +58,11 @@ Widget super_month_items(three_oylik three_month) {
           borderRadius: BorderRadius.circular(16),
           // ignore: prefer_const_literals_to_create_immutables
           boxShadow: [
-            BoxShadow(
+            const BoxShadow(
                 color: Colors.black,
                 spreadRadius: -5,
                 blurRadius: 10,
-                offset: const Offset(0, 1))
+                offset: Offset(0, 1))
           ],
           border: Border.all(width: 1, color: Colors.white30)),
       child: Column(
@@ -76,7 +75,7 @@ Widget super_month_items(three_oylik three_month) {
               children: [
                 Text(
                   three_month.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -85,7 +84,7 @@ Widget super_month_items(three_oylik three_month) {
               ],
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 3,
             color: Colors.grey,
           ),
@@ -124,7 +123,7 @@ Widget super_month_items(three_oylik three_month) {
                         child: Text("O'zbekiston bo'yicha: ${three_month.sms}"))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Row(
@@ -134,15 +133,15 @@ Widget super_month_items(three_oylik three_month) {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ElevatedButton(
               onPressed: () {
                 FlutterPhoneDirectCaller.callNumber(three_month.code);
               },
-              child: Text("Faollashtirish uchun")),
-          SizedBox(
+              child: const Text("Faollashtirish uchun")),
+          const SizedBox(
             height: 5,
           )
         ],

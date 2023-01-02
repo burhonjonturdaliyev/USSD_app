@@ -63,13 +63,9 @@ Widget foydali_items(foydali_tuplam foydali) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const Icon(
-                  Icons.save_alt_outlined,
-                  color: Colors.blue,
-                ),
                 // ignore: prefer_const_constructors
                 Column(
                   // ignore: prefer_const_literals_to_create_immutables
@@ -90,10 +86,6 @@ Widget foydali_items(foydali_tuplam foydali) {
                     )
                   ],
                 ),
-                const Icon(
-                  Icons.show_chart_outlined,
-                  color: Colors.blue,
-                )
               ],
             ),
           ),

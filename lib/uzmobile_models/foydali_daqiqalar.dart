@@ -1,3 +1,4 @@
+// ignore: camel_case_types
 class foydali_tuplam {
   String name;
   String get;
