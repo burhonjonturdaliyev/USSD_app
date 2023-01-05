@@ -1,30 +1,63 @@
-import "package:flutter/material.dart";
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Tarif%20rejalari/models/fresh_models.dart';
+
+import '../../uzmobile_models/oylik_packages.dart';
 
 // ignore: camel_case_types
-class Fresh_mobiuz extends StatelessWidget {
-  const Fresh_mobiuz({super.key});
+class Oylik_Uzmobile extends StatelessWidget {
+  const Oylik_Uzmobile({super.key});
 
-  static List<Fresh_models> models = [
-    Fresh_models("Asosiy", "21000", "2000", "126,31", "2000", "421,04", "2000",
-        "84,2", "616114", "*111*114#"),
-    Fresh_models("Standart", "25000", "3500", "126,31", "3500", "421,04",
-        "3500", "84,2", "616117", "*111*117#"),
-    Fresh_models("Optimal+", "33000", "5000", "126,31", "5000", "421,04",
-        "5000", "84,2", "616121", "*111*121#"),
-    Fresh_models("Chilla", "20000", "3000", "84,2", "200", "421,04", "100",
-        "84,2", "616042", "*111*042#"),
-    Fresh_models("Qulay+", "42000", "5000", "126,31", "8000", "421,04", "5000",
-        "84,2", "616127", "*111*127#"),
-    Fresh_models("Yorqin", "60000", "5000", "126,31", "15000", "421,04", "5000",
-        "84,2", "616113", "*111*113#"),
-    Fresh_models("Premial", "63000", "15000", "0", "15000", "421,04", "15000",
-        "84,2", "616130", "*111*130#"),
-    Fresh_models("Ideal", "94000", "30000", "146,31", "15000", "421,04",
-        "30000", "84,2", "616135", "*111*135#"),
-    Fresh_models("Cheksiz", "147000", "Cheksiz", "0", "30000", "421,04",
-        "50000", "84,2", "616141", "*111*141#"),
+  static List<Packages> models = [
+    Packages(
+        price: "10,000",
+        time: "10",
+        internet: "10",
+        sms: "10",
+        limit_money: "10",
+        name: 'ODDIY 10',
+        code: '*111*1*11*12#'),
+    Packages(
+        price: "39,900",
+        time: "750 daqiqa\nTarmoq ichida 1500",
+        internet: "6500",
+        sms: "750",
+        limit_money: "1000",
+        name: 'STREET',
+        code: '*111*1*11*1*1#'),
+    Packages(
+        price: "49,900",
+        time: "1000 daqiqa\nTarmoq ichida 2000",
+        internet: "10000",
+        sms: "10000",
+        limit_money: "280",
+        name: 'ONLIME',
+        code: '*111*1*11*6#'),
+    Packages(
+        name: "FLASH",
+        price: "69,900",
+        time: "1500 daqiqa\nTaqmoq ichida 2000",
+        internet: "16000",
+        sms: "1500",
+        limit_money: "700",
+        code: "*111*1*11*2*1#"),
+    Packages(
+        name: "ISHBILARMON",
+        price: "99,000",
+        time: "Cheksiz",
+        internet: "25000",
+        sms: "3000",
+        limit_money: "500",
+        code: "*111*1*11*10#"),
+    Packages(
+        name: "ROYAL",
+        price: "149,900",
+        time: "Cheksiz",
+        internet: "Cheksiz",
+        sms: "5000",
+        limit_money: "1",
+        code: "*111*1*11*2*1#"),
   ];
 
   @override
@@ -32,13 +65,13 @@ class Fresh_mobiuz extends StatelessWidget {
     return ListView.builder(
         itemCount: models.length,
         itemBuilder: (context, index) {
-          return fresh_items(models[index]);
+          return oylik_items(models[index]);
         });
   }
 }
 
 // ignore: non_constant_identifier_names
-Widget fresh_items(Fresh_models models) {
+Widget oylik_items(Packages models) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
@@ -66,7 +99,7 @@ Widget fresh_items(Fresh_models models) {
                 Text(
                   models.name,
                   style: const TextStyle(
-                      color: Colors.red,
+                      color: Colors.blue,
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 )
@@ -75,7 +108,7 @@ Widget fresh_items(Fresh_models models) {
           ),
           const Divider(
             thickness: 1,
-            color: Colors.red,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -83,49 +116,35 @@ Widget fresh_items(Fresh_models models) {
               children: [
                 Row(
                   children: [
-                    Expanded(child: Text("Oyiga to'lov: ${models.tolov} so'm"))
-                  ],
-                ),
-                Row(
-                  children: [
                     Expanded(
-                        child: Text("Uzb bo'yicha daqiqalar: ${models.daqiqa}"))
+                        child:
+                            Text("Abonent to'lovi oyiga: ${models.price} so'm"))
                   ],
                 ),
                 Row(
                   children: [
                     Expanded(
                         child: Text(
-                            "Limitdan tashqari daqiqa: ${models.limit_daqiqa} so'm"))
+                            "O'zbekiston bo'yicha daqiqalar ${models.time} daqiqa"))
                   ],
                 ),
                 Row(
                   children: [
-                    Expanded(child: Text("Internet: ${models.internet} Mb"))
+                    Expanded(
+                        child: Text("Mobile internet ${models.internet} Mb"))
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                        child: Text("O'zbekiston bo'yicha ${models.sms} SMS"))
                   ],
                 ),
                 Row(
                   children: [
                     Expanded(
                         child: Text(
-                            "Limitdan tashqari internet: ${models.tolov} so'm"))
-                  ],
-                ),
-                Row(
-                  children: [Expanded(child: Text("SMS: ${models.sms}"))],
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: Text(
-                            "Limitdan tashqari SMS: ${models.limit_sms} so'm"))
-                  ],
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: Text(
-                            "SMS yordamchi: ${models.tolov} raqamiga 1 sonini"))
+                            "Limitdan tashqari hammasi ${models.limit_money} so'mdan"))
                   ],
                 ),
               ],
@@ -135,7 +154,7 @@ Widget fresh_items(Fresh_models models) {
             height: 10,
           ),
           ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: () {
                 FlutterPhoneDirectCaller.callNumber(models.code);
               },

@@ -105,7 +105,7 @@ Widget non_stop_items(non_stop stop) {
                 Text(
                   stop.name,
                   style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.blue,
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
@@ -114,7 +114,7 @@ Widget non_stop_items(non_stop stop) {
           ),
           const Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

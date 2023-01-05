@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Tarif%20rejalari/list_view/faol.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Tarif%20rejalari/list_view/fresh.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Tarif%20rejalari/list_view/imtiyoz.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Tarif%20rejalari/list_view/yillik.dart';
 
 // ignore: camel_case_types
 class Tarif_Mobiuz extends StatelessWidget {
@@ -17,9 +20,11 @@ class Tarif_Mobiuz extends StatelessWidget {
             ),
             centerTitle: true,
             backgroundColor: Colors.red,
+            // ignore: prefer_const_constructors
             bottom: TabBar(
               indicatorColor: Colors.white,
               isScrollable: false,
+              // ignore: prefer_const_literals_to_create_immutables
               tabs: [
                 const Tab(
                   child: Text("Faol"),
@@ -30,20 +35,14 @@ class Tarif_Mobiuz extends StatelessWidget {
                 const Tab(
                   child: Text("Imtiyozli"),
                 ),
-                Tab(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [const Text("Fresh"), const Text("To'plamlar")],
-                  ),
-                )
+                const Tab(child: Text("Fresh"))
               ],
             )),
         body: const TabBarView(children: [
           Faol_Mobiuz(),
-          Text("data"),
-          Text("data"),
-          Text("data"),
+          Yillik_tarif(),
+          Imtiyozli_mobiuz(),
+          Fresh_mobiuz(),
         ]),
       ),
     );

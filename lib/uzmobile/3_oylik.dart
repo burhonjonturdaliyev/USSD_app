@@ -76,7 +76,7 @@ Widget super_month_items(three_oylik three_month) {
                 Text(
                   three_month.name,
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -85,8 +85,8 @@ Widget super_month_items(three_oylik three_month) {
             ),
           ),
           const Divider(
-            thickness: 3,
-            color: Colors.grey,
+            thickness: 1,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

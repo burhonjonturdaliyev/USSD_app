@@ -65,7 +65,7 @@ Widget ussd_items(USSD_models ussd) {
                 blurRadius: 10,
                 offset: const Offset(0, 1))
           ],
-          border: Border.all(width: 1, color: Colors.white30)),
+          border: Border.all(width: 1, color: Colors.white24)),
       child: Column(children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -76,7 +76,7 @@ Widget ussd_items(USSD_models ussd) {
               Text(
                 ussd.name,
                 style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
@@ -86,7 +86,7 @@ Widget ussd_items(USSD_models ussd) {
         // ignore: prefer_const_constructors
         Divider(
           thickness: 1,
-          color: Colors.grey,
+          color: Colors.blue,
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),

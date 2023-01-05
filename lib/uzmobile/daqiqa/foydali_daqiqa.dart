@@ -75,14 +75,14 @@ Widget foydali_items(foydali_tuplam foydali) {
                       style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.blue),
                     ),
                     const Text(
                       "Almashtirish",
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.blue),
                     )
                   ],
                 ),
@@ -91,7 +91,7 @@ Widget foydali_items(foydali_tuplam foydali) {
           ),
           const Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

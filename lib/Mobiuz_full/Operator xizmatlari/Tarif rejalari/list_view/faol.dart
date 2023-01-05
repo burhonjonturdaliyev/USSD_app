@@ -25,7 +25,76 @@ class Faol_Mobiuz extends StatelessWidget {
             "3500/117 daqiqa (oyiga/kuniga) MOBIUZ abonentlariga, O'zbekistonning boshqa mobil operatorlari va shahar raqamlariga chiquvchi qo'ng'iroqlariga",
         internet: "3500/117 Mb (oyiga/kuniga) Mobil internet",
         sms: "3500/117 SMS (oyiga/kuniga)",
-        code: "*111*102#")
+        code: "*111*102#"),
+    Faol_model(
+        name: "Mobi 35+",
+        abonent: "Abobent to'lovi oyiga/kuniga 30000/1500 so'm",
+        info:
+            "5000/167 daqiqa MOBIUZ abonentlariga, O'zbekistonning boshqa mobil operatorlari va shahar raqamlariga chiquvchi qo'ng'iroqlarga oyiga/kuniga",
+        internet: "5000/167 Mb mobil internet oyiga/kuniga",
+        sms: "3500/117 SMS oyiga/kuniga",
+        code: "*111*128#"),
+    Faol_model(
+        name: "Mobi 40",
+        abonent: "40000/2000 so'm - oylik/kunlik abonent to'lovi",
+        info:
+            "UNLIM Mobiuz tarmog'i ichidagi qo'ng'iroqlarga\n5000/167 daqiqa (oyiga/kuniga) O'zbekiston bo'yicha chiquvchi qo'ng'iroqlarga",
+        internet: "8000/267 Mb Mobil internet (oyiga/kuniga)",
+        sms: "3500/117 SMS (oyiga/kuniga)",
+        code: "*111*122#"),
+    Faol_model(
+        name: "Mobi 50",
+        abonent: "Abonent to'lovi - 50000 so'm",
+        info:
+            "UNLIM Mobiuz tarmog'i ichidagi qo'ng'iroqlarga\n5000 O'zbekiston bo'yicha chiquvchi qo'ng'iroqlarga",
+        internet: "10000 Mb Mobil internet",
+        sms: "3500 SMS oyiga",
+        code: "*111*129#"),
+    Faol_model(
+        name: "Mobi 70",
+        abonent: "Abonent to'lovi - 70000 so'm",
+        info:
+            "UNLIM Mobiuz tarmog'i ichidagi qo'ng'iroqlarga\n5000 O'zbekiston boshqa mobil operatorlari abonentlarga, shahar raqamlariga",
+        internet: "20000 Mb Mobil internet",
+        sms: "3500 SMS oyiga",
+        code: "*111*131#"),
+    Faol_model(
+        name: "Mobi 90",
+        abonent: "Abonent to'lovi - 90000 so'm",
+        info:
+            "UNLIM Mobiuz tarmog'i ichidagi qo'ng'iroqlarga\n5000 O'zbekiston bo'yicha chiquvchi qo'ng'iroqlarga",
+        internet: "65000 Mb Mobil internet",
+        sms: "3500 SMS oyiga",
+        code: "*111*132#"),
+    Faol_model(
+        name: "Mobi 110",
+        abonent: "Abonent to'lovi - 110000 so'm",
+        info: "UNLIM O'zbekiston bo'yicha chiquvchi qo'ng'iroqlarga",
+        internet: "80000 Mb Mobil internet",
+        sms: "5000 SMS oyiga",
+        code: "*111*133#"),
+    Faol_model(
+        name: "Mobi 150",
+        abonent: "Abonent to'lovi - 150000 so'm",
+        info: "UNLIM O'zbekiston bo'yicha chiquvchi qo'ng'iroqlarga",
+        internet: "100000 Mb Mobil internet",
+        sms: "10000 SMS oyiga",
+        code: "*111*134#"),
+    Faol_model(
+        name: "Terminal+",
+        abonent: "Abonent to'lovi 12000/600 so'm oyiga/kuniga",
+        info: "0 so'm Kiruvchi qo'ng'iroqlar",
+        internet: "300/10 Mb Mobil internet oyiga/kuniga",
+        sms: "SMS paketlari mavjud emas",
+        code: "*111*112#"),
+    Faol_model(
+        name: "Chilla Lite",
+        abonent: "",
+        info:
+            "Mobiuz abonentlariga, O'zbekistonning boshqa mobil operatorlari va shahar raqamlariga chiquvchi qo'ng'iroqlarga oyiga/kuniga",
+        internet: "200*7 Mb Mobil internet oyiga/kuniga",
+        sms: "100/3 SMS oyiga/kuniga",
+        code: "*111*042#"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -67,7 +136,7 @@ Widget Faol_items(Faol_model models) {
                 Text(
                   models.name,
                   style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.red,
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 )
@@ -76,7 +145,7 @@ Widget Faol_items(Faol_model models) {
           ),
           const Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.red,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

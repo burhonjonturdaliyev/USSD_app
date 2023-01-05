@@ -40,14 +40,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "SMS axborot",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -92,14 +92,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Sevgi SMS",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -144,14 +144,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Mening shaharim",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -196,14 +196,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Iqtiboslar",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -248,14 +248,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Ob-havo",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -300,14 +300,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Hayrli tong/kech",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -352,14 +352,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Muvaffaqiyali maslahatlar",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -404,14 +404,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Faktlar",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -456,14 +456,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Faktlar va rekordlar",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -508,14 +508,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Munajjimlar bashorati",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -560,14 +560,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Sevgi munajjimlar bashorati",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -612,14 +612,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Biznes munajjimlar bashorati",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -664,14 +664,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Testlar ro'yxati",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -716,14 +716,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Ajoyib juftlik",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -768,14 +768,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Testlar. Xotirangiz",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -820,14 +820,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Testlar. Sog'lom turmush tarzi",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -872,14 +872,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Interaktiv ko'ngil ochar portal",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -924,14 +924,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Super portal",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -976,14 +976,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Mobil inform xizmatlari",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -1028,14 +1028,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Smile mobile xizmatlari",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -1080,14 +1080,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Qum soat",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -1132,14 +1132,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "Solo media xizmatlari",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -1184,14 +1184,14 @@ class Pullik_xizmatlar extends StatelessWidget {
                             Text(
                               "<<Play mobile>> Xizmatlari",
                               style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                      const Divider(thickness: 1, color: Colors.grey),
+                      const Divider(thickness: 1, color: Colors.blue),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(

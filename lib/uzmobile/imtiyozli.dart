@@ -73,7 +73,7 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
                 Text(
                   imtiyoz.name,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -82,8 +82,8 @@ Widget imtiyozli_items(extra_imtiyoz imtiyoz) {
             ),
           ),
           Divider(
-            thickness: 3,
-            color: Colors.grey,
+            thickness: 1,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

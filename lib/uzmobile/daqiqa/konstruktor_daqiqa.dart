@@ -68,7 +68,7 @@ Widget konstruktor_daqiqa_items(daqiqalar_model model) {
                   style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                      color: Colors.blue),
                 ),
               ],
             ),
@@ -76,7 +76,7 @@ Widget konstruktor_daqiqa_items(daqiqalar_model model) {
           // ignore: prefer_const_constructors
           Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
