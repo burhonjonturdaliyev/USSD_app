@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Daqiqa/daqiqa_mobiuz.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/SMS/sms_mobiuz.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/internet/internet_mobiuz.dart';
 import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
 import 'package:ussd_kodlari/navigatorbar/bar.dart';
@@ -384,53 +386,71 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          // ignore: prefer_const_constructors
-                          BoxShadow(
-                              offset: const Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.red),
-                    // ignore: prefer_const_constructors
-                    child: Center(
-                        child: const Text(
-                      "SMS\nto'plamlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SMS_mobiuz(),
+                          ));
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            // ignore: prefer_const_constructors
+                            BoxShadow(
+                                offset: const Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.red),
+                      // ignore: prefer_const_constructors
+                      child: Center(
+                          child: const Text(
+                        "SMS\nto'plamlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   ),
                   // ignore: prefer_const_constructors
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
-                          // ignore: prefer_const_constructors
-                          BoxShadow(
-                              offset: const Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.red),
-                    // ignore: prefer_const_constructors
-                    child: Center(
-                        child: const Text(
-                      "Daqiqa\nto'plamlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) =>
+                                  const Daqiqalar_mobiuz())));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            // ignore: prefer_const_constructors
+                            BoxShadow(
+                                offset: const Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.red),
+                      // ignore: prefer_const_constructors
+                      child: Center(
+                          child: const Text(
+                        "Daqiqa\nto'plamlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   )
                 ],
               ),

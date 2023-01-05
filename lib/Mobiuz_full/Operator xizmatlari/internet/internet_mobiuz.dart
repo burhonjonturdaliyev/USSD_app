@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/internet/List_view/OnNet.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/internet/List_view/kunlik.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/internet/List_view/oylik_mobi_internet.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/internet/List_view/tungi.dart';
@@ -42,7 +43,7 @@ class Internet_toplamlari_mobi extends StatelessWidget {
             Oylik_internet_mobi(),
             Kunlik_internet_mobiuz(),
             Tungi_mobiuz_internet(),
-            Text("data")
+            OnNet_mobiuz()
           ]),
         ));
   }
