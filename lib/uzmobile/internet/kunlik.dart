@@ -66,7 +66,9 @@ Widget Kunlik_items(super_internet internet) {
                 Text(
                   internet.name,
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue),
                 ),
               ],
             ),
@@ -74,7 +76,7 @@ Widget Kunlik_items(super_internet internet) {
           // ignore: prefer_const_constructors
           Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

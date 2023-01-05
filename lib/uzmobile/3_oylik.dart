@@ -1,4 +1,5 @@
-// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:ussd_kodlari/uzmobile_models/3_oylik.dart';
@@ -76,7 +77,7 @@ Widget super_month_items(three_oylik three_month) {
                 Text(
                   three_month.name,
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -85,8 +86,8 @@ Widget super_month_items(three_oylik three_month) {
             ),
           ),
           const Divider(
-            thickness: 3,
-            color: Colors.grey,
+            thickness: 1,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

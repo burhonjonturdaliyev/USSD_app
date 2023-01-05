@@ -111,20 +111,23 @@ Widget Units_item(Unit_packages unit_packages) {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "UNITS ${unit_packages.package_name}",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.blue),
                 ),
               ],
             ),
           ),
           Divider(
-            thickness: 2,
-            color: Colors.grey,
+            thickness: 1,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

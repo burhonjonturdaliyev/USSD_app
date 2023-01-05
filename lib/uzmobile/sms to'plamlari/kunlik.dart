@@ -65,14 +65,14 @@ Widget sms_kunlik_items(sms_kun sms) {
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                      color: Colors.blue),
                 ),
               ],
             ),
           ),
           Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

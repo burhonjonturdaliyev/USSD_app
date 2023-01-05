@@ -69,7 +69,7 @@ Widget konstruktor_items(sms_oylik sms) {
                 sms.name,
                 // ignore: prefer_const_constructors
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
@@ -79,7 +79,7 @@ Widget konstruktor_items(sms_oylik sms) {
         // ignore: prefer_const_constructors
         Divider(
           thickness: 1,
-          color: Colors.grey,
+          color: Colors.blue,
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -102,7 +102,7 @@ Widget konstruktor_items(sms_oylik sms) {
         ),
         // ignore: prefer_const_constructors
         SizedBox(
-          height: 15,
+          height: 5,
         ),
         ElevatedButton(
             onPressed: () {

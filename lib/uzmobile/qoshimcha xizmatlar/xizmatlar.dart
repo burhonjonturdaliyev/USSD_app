@@ -39,7 +39,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "*111*2*7*2#",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -48,7 +48,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -96,7 +96,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "*43#",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -105,7 +105,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -154,7 +154,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "*67#",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -163,7 +163,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -212,7 +212,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "*#06#",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -221,7 +221,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -270,7 +270,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "LTE (4G)",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -279,7 +279,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -344,7 +344,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "Restart",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -353,7 +353,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -400,7 +400,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "Barcha qo'ng'iroqlari yo'naltirish",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -409,7 +409,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -464,7 +464,7 @@ class Xizmatlar extends StatelessWidget {
                                     child: Text(
                                       "Band bo'lgandagi qo'ng'iroqlarni yo'naltirish",
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: Colors.blue,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -475,7 +475,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -529,7 +529,7 @@ class Xizmatlar extends StatelessWidget {
                                     child: Text(
                                       "Javozsiz qo'ng'iroqlarni yo'naltirish",
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: Colors.blue,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -540,15 +540,51 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              // ignore: prefer_const_literals_to_create_immutables
+                            child: Column(
                               children: [
-                                const Text(
-                                    "Faollashtirish: **61*telefon raqami#\nBu yerda X = vaqt, sekund (5 sekunddan 25 sekundgacha)\nBekor qilish: ##61##\nO'CHIRISH\nMisol uchun: qo'ng'iroqqa 10 sekund ichida javob\nbo'lmaganda, qo'ng'iroqlarni +998991234567\nraqamiga yo'naltirish uchun, quyidagi buyruq kiritiladi:\n**67*+9998991234567**10#")
+                                Row(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    const Expanded(
+                                      child: Text(
+                                          "Faollashtirish: **61*telefon raqami#"),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    const Expanded(
+                                      child: Text(
+                                          "Bu yerda X = vaqt, sekund (5 sekunddan 25 sekundgacha)"),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    const Expanded(
+                                        child: Text("Bekor qilish: ##61##"))
+                                  ],
+                                ),
+                                Row(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    const Expanded(child: Text("O'chirish"))
+                                  ],
+                                ),
+                                Row(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    const Expanded(
+                                        child: Text(
+                                            "Misol uchun: qo'ng'iroqqa 10 sekund ichida javob bo'lmaganda, qo'ng'iroqlarni +998991234567 raqamiga yo'naltirish uchun, quyidagi buyruq kiritiladi: **67*+9998991234567**10#"))
+                                  ],
+                                )
                               ],
                             ),
                           ),
@@ -594,7 +630,7 @@ class Xizmatlar extends StatelessWidget {
                                     child: Text(
                                       "Kiruvchi qo'ng'iroq va sms larni taqiqlash",
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: Colors.blue,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -605,7 +641,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -673,7 +709,7 @@ class Xizmatlar extends StatelessWidget {
                                     child: Text(
                                       "Chiquvchi qo'ng'iroqlarni taqiqlash",
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: Colors.blue,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -684,7 +720,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -749,7 +785,7 @@ class Xizmatlar extends StatelessWidget {
                                 const Text(
                                   "Abonent xizmatlari bo'limi",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.blue,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -758,7 +794,7 @@ class Xizmatlar extends StatelessWidget {
                           ),
                           const Divider(
                             thickness: 1,
-                            color: Colors.grey,
+                            color: Colors.blue,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),

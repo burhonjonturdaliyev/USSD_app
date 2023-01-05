@@ -52,7 +52,7 @@ Widget tungi_items(super_internet internet) {
                 blurRadius: 10,
                 offset: const Offset(0, 1))
           ],
-          border: Border.all(width: 1, color: Colors.white30)),
+          border: Border.all(width: 1, color: Colors.white24)),
       child: Column(
         children: [
           Padding(
@@ -64,7 +64,9 @@ Widget tungi_items(super_internet internet) {
                 Text(
                   internet.name,
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue),
                 ),
               ],
             ),
@@ -72,7 +74,7 @@ Widget tungi_items(super_internet internet) {
           // ignore: prefer_const_constructors
           Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

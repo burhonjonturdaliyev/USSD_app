@@ -71,7 +71,7 @@ Widget oylik_sms_items(sms_oylik sms) {
                 Text(
                   sms.name,
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.blue,
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
@@ -80,7 +80,7 @@ Widget oylik_sms_items(sms_oylik sms) {
           ),
           Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Tarif%20rejalari/models/imtiyoz_model.dart';
 
 // ignore: camel_case_types
-class Oylik_Uzmobile extends StatelessWidget {
-  const Oylik_Uzmobile({super.key});
+class Imtiyozli_mobiuz extends StatelessWidget {
+  const Imtiyozli_mobiuz({super.key});
+
+  static List<Imtiyoz_mobi> model = [
+    Imtiyoz_mobi(
+        name: "Imtiyozli tarif rejalari",
+        info: "Ushbu xizmatlarni faqat rasmiy ofislardan ulatishingiz mumkin")
+  ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 100,
+        itemCount: model.length,
         itemBuilder: (context, index) {
-          return Container();
+          return Imtiyozli_items(model[index]);
         });
   }
 }
 
 // ignore: non_constant_identifier_names
-Widget oylik_items() {
+Widget Imtiyozli_items(Imtiyoz_mobi models) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
@@ -42,9 +48,9 @@ Widget oylik_items() {
               children: [
                 // ignore: prefer_const_constructors
                 Text(
-                  "models.name",
+                  models.name,
                   style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.red,
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 )
@@ -53,27 +59,18 @@ Widget oylik_items() {
           ),
           const Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.red,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Row(
-                  children: [Expanded(child: Text("Oyiga to'lov: so'm"))],
+                  children: [Expanded(child: Text(models.info))],
                 ),
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-              onPressed: () {
-                FlutterPhoneDirectCaller.callNumber("models.code");
-              },
-              child: const Text("Faollashtirish uchun")),
           const SizedBox(
             height: 10,
           )

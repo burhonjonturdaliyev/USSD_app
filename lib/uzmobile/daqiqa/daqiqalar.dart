@@ -66,7 +66,7 @@ Widget daqiqalar_items(daqiqalar_model model) {
                   model.name,
                   // ignore: prefer_const_constructors
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.blue,
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
@@ -76,7 +76,7 @@ Widget daqiqalar_items(daqiqalar_model model) {
           // ignore: prefer_const_constructors
           Divider(
             thickness: 1,
-            color: Colors.grey,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
