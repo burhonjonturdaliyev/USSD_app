@@ -5,7 +5,9 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Daqiqa/daqiqa_mobiuz.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Qoshimcha%20xizmatlar/qoshimcha_xizmatlar_mobiuz.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/SMS/sms_mobiuz.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/USSD_codelari/ussd_kodlari.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/internet/internet_mobiuz.dart';
 import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
 import 'package:ussd_kodlari/navigatorbar/bar.dart';
@@ -461,55 +463,75 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const USSD_Mobiuz_kodlari()));
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            // ignore: prefer_const_constructors
+                            BoxShadow(
+                                offset: const Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.red),
+                      // ignore: prefer_const_constructors
+                      child: Center(
                           // ignore: prefer_const_constructors
-                          BoxShadow(
-                              offset: const Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.red),
-                    // ignore: prefer_const_constructors
-                    child: Center(
-                        // ignore: prefer_const_constructors
-                        child: Text(
-                      "USSD kodlari",
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                    )),
+                          child: Text(
+                        "USSD kodlari",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   ),
                   // ignore: prefer_const_constructors
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const Qoshimcha_xizmatlar_mobiuz()));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          boxShadow: [
+                            // ignore: prefer_const_constructors
+                            BoxShadow(
+                                offset: const Offset(0, 17),
+                                blurRadius: 15,
+                                spreadRadius: -13,
+                                color: Colors.black54)
+                          ],
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.red),
+                      // ignore: prefer_const_constructors
+                      child: Center(
                           // ignore: prefer_const_constructors
-                          BoxShadow(
-                              offset: const Offset(0, 17),
-                              blurRadius: 15,
-                              spreadRadius: -13,
-                              color: Colors.black54)
-                        ],
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.red),
-                    // ignore: prefer_const_constructors
-                    child: Center(
-                        // ignore: prefer_const_constructors
-                        child: Text(
-                      "Qo'shimcha\nxizmatlar",
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                    )),
+                          child: Text(
+                        "Qo'shimcha\nxizmatlar",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
+                      )),
+                    ),
                   )
                 ],
               ),
