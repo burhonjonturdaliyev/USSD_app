@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Daqiqa/List_view/gap_kop_mobiuz.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Operator%20xizmatlari/Daqiqa/List_view/oy_daqiqa_mobiuz.dart';
 
 // ignore: camel_case_types
@@ -30,8 +31,8 @@ class Daqiqalar_mobiuz extends StatelessWidget {
             ]),
           ),
           // ignore: prefer_const_literals_to_create_immutables
-          body:
-              const TabBarView(children: [OyLik_daqiqa_mobiuz(), Text("data")]),
+          body: const TabBarView(
+              children: [OyLik_daqiqa_mobiuz(), Gap_kop_mobiuz()]),
         ));
   }
 }
