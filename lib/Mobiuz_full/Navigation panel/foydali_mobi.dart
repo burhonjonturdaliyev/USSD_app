@@ -45,40 +45,42 @@ class Foydali_Mobiuz extends StatelessWidget {
 
 // ignore: non_constant_identifier_names
 Widget foydali_malumot(foydali_models models) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: GestureDetector(
-      onTap: () {
-        FlutterPhoneDirectCaller.callNumber(models.code);
-      },
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: Colors.white,
-            border: Border.all(width: 1, color: Colors.white24),
-            // ignore: prefer_const_literals_to_create_immutables
-            boxShadow: [
-              const BoxShadow(
-                  color: Colors.black45,
-                  blurRadius: 1,
-                  spreadRadius: 1,
-                  offset: Offset(0, 0))
-            ]),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                models.name,
-                style: const TextStyle(color: Colors.black, fontSize: 16),
-              ),
-              Text(
-                models.code,
-                style:
-                    const TextStyle(color: Color.fromARGB(255, 112, 107, 107)),
-              ),
-            ],
+  return SafeArea(
+    minimum: const EdgeInsets.only(bottom: 1),
+    child: Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: GestureDetector(
+        onTap: () {
+          FlutterPhoneDirectCaller.callNumber(models.code);
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.white,
+              border: Border.all(width: 1, color: Colors.white24),
+              // ignore: prefer_const_literals_to_create_immutables
+              boxShadow: [
+                const BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 2,
+                    spreadRadius: 1,
+                    offset: Offset(0, 0))
+              ]),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  models.name,
+                  style: const TextStyle(color: Colors.red, fontSize: 16),
+                ),
+                Text(
+                  models.code,
+                  style: TextStyle(color: Colors.red[100]),
+                ),
+              ],
+            ),
           ),
         ),
       ),
