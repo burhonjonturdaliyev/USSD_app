@@ -30,6 +30,18 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: GestureDetector(
+              onTap: null,
+              child: const Icon(
+                Icons.share,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
         backgroundColor: Colors.red,
         centerTitle: true,
         // ignore: prefer_const_constructors

@@ -43,7 +43,7 @@ class Foydali_malumotlar extends StatelessWidget {
 // ignore: non_constant_identifier_names
 Widget foydali_malumot_items(foydali_models models) {
   return Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(6.0),
     child: GestureDetector(
       onTap: () {
         FlutterPhoneDirectCaller.callNumber(models.code);
@@ -56,8 +56,8 @@ Widget foydali_malumot_items(foydali_models models) {
             // ignore: prefer_const_literals_to_create_immutables
             boxShadow: [
               const BoxShadow(
-                  color: Colors.black45,
-                  blurRadius: 1,
+                  color: Colors.black12,
+                  blurRadius: 2,
                   spreadRadius: 1,
                   offset: Offset(0, 0))
             ]),
@@ -68,12 +68,11 @@ Widget foydali_malumot_items(foydali_models models) {
             children: [
               Text(
                 models.name,
-                style: const TextStyle(color: Colors.black, fontSize: 16),
+                style: const TextStyle(color: Colors.blue, fontSize: 16),
               ),
               Text(
                 models.code,
-                style:
-                    const TextStyle(color: Color.fromARGB(255, 112, 107, 107)),
+                style: TextStyle(color: Colors.blue[100]),
               ),
             ],
           ),

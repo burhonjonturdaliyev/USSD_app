@@ -26,6 +26,18 @@ class _UcellHome_pageState extends State<UcellHome_page> {
     return Scaffold(
       // ignore: duplicate_ignore
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: GestureDetector(
+              onTap: null,
+              child: Icon(
+                Icons.share,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
         backgroundColor: Color(0xff6b2d82),
         centerTitle: true,
         title: Text(

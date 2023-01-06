@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_final_fields, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -33,26 +32,20 @@ class _Home_pageState extends State<Home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-          width: 250,
-
-          // ignore: sort_child_properties_last
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              Text(
-                "Hello!",
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white),
-              )
-            ],
-          ),
-          backgroundColor: Colors.blue),
       appBar: AppBar(
+        // ignore: prefer_const_literals_to_create_immutables
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: GestureDetector(
+              onTap: null,
+              child: Icon(
+                Icons.share,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
         backgroundColor: Colors.blue,
         centerTitle: true,
         title: Text(
@@ -160,11 +153,6 @@ class _Home_pageState extends State<Home_page> {
                             context,
                             MaterialPageRoute(builder: (context) => BarMobi()),
                             (route) => false);
-
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => MobiuzHome_page()));
                       },
                       child: Text(
                         "Mobiuz",

@@ -24,6 +24,18 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: GestureDetector(
+              onTap: null,
+              child: const Icon(
+                Icons.share,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
         backgroundColor: const Color(0xffffc904),
         centerTitle: true,
         // ignore: prefer_const_constructors
