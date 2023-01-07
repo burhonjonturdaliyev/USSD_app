@@ -1,25 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Daqiqa%20toplamlari/models/daqiqa_toplamlari_ucell_models.dart';
 
 // ignore: camel_case_types
 class daqiqa_toplamlari_ucell extends StatelessWidget {
   const daqiqa_toplamlari_ucell({super.key});
 
+  static List<daqiqa_toplamlari_ucell_models> models = [
+    daqiqa_toplamlari_ucell_models(
+        name: "200",
+        narxi: "4000",
+        daqiqa: "100 daqiqa + 100 daqiqa bonus",
+        muddati: "30",
+        activate: "*130#"),
+    daqiqa_toplamlari_ucell_models(
+        name: "600",
+        narxi: "8000",
+        daqiqa: "300 daqiqa + 300 daqiqa bonus",
+        muddati: "30",
+        activate: "*130#"),
+    daqiqa_toplamlari_ucell_models(
+        name: "1200",
+        narxi: "12000",
+        daqiqa: "600 daqiqa + 600 daqiqa bonus",
+        muddati: "30",
+        activate: "*130#"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Daqiqa to'plamlari",
-          style: TextStyle(
-              color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+        appBar: AppBar(
+          title: const Text(
+            "Daqiqa to'plamlari",
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          elevation: 10,
+          backgroundColor: const Color(0xff6b2d82),
         ),
-        centerTitle: true,
-        elevation: 10,
-        backgroundColor: const Color(0xff6b2d82),
-      ),
-      body: ListView(children: [
-        Padding(
+        body: ListView.builder(
+            itemCount: models.length,
+            itemBuilder: (context, index) {
+              return daqiqa_toplamlari_ucell_items(models[index]);
+            }));
+  }
+}
+
+// ignore: non_constant_identifier_names
+Widget daqiqa_toplamlari_ucell_items(daqiqa_toplamlari_ucell_models models) {
+  return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
       decoration: BoxDecoration(
@@ -44,7 +75,7 @@ class daqiqa_toplamlari_ucell extends StatelessWidget {
               children: [
                 // ignore: prefer_const_constructors
                 Text(
-                  models.name,
+                  "${models.name} DAQIQA",
                   style: const TextStyle(
                       color: Color(0xff6b2d82),
                       fontWeight: FontWeight.bold,
@@ -63,17 +94,23 @@ class daqiqa_toplamlari_ucell extends StatelessWidget {
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Row(
-                  children: [Expanded(child: Text(models.narxi))],
+                  children: [
+                    Expanded(child: Text("To'plam narxi: ${models.narxi} so'm"))
+                  ],
                 ),
                 Row(
-                  children: [Expanded(child: Text(models.daqiqa))],
+                  children: [
+                    Expanded(
+                        child: Text("O'zbekiston bo'yicha: ${models.daqiqa}"))
+                  ],
                 ),
                 Row(
-                  children: [Expanded(child: Text(models.internet))],
+                  children: [
+                    Expanded(
+                        child:
+                            Text("Amal qilish muddati: ${models.muddati} kun"))
+                  ],
                 ),
-                Row(
-                  children: [Expanded(child: Text(models.sms))],
-                )
               ],
             ),
           ),
@@ -81,7 +118,7 @@ class daqiqa_toplamlari_ucell extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff6b2d82)),
               onPressed: () {
-                FlutterPhoneDirectCaller.callNumber(models.code);
+                FlutterPhoneDirectCaller.callNumber(models.activate);
               },
               child: const Text("Faollashtish uchun")),
           const SizedBox(
@@ -91,7 +128,4 @@ class daqiqa_toplamlari_ucell extends StatelessWidget {
       ),
     ),
   );
-      ]),
-    );
-  }
 }

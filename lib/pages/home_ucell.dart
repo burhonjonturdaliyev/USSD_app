@@ -7,9 +7,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Mobiuz_bar.dart';
 import 'package:ussd_kodlari/beeline_full/beeline_bar.dart';
 import 'package:ussd_kodlari/navigatorbar/bar.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Daqiqa%20toplamlari/daqiqa_toplamlari_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Internet%20toplamlari/internet_toplamlari_ucell.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Qoshimcha%20xizmatlar/qoshimcha_xizmatlar_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/SMS%20toplamlari/sms_toplamlari_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Tarif%20rejalari/Tarif_rejalari_ucell.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/USSD%20kodlari/ussd_kodlari_ucell.dart';
 
 // ignore: camel_case_types
 class UcellHome_page extends StatefulWidget {
@@ -401,26 +404,34 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xff6b2d82),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => daqiqa_toplamlari_ucell()));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xff6b2d82),
+                      ),
+                      child: Center(
+                          child: Text(
+                        "Daqiqa\nto'plamlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      "Daqiqa\nto'plamlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   )
                 ],
               ),
@@ -430,50 +441,67 @@ class _UcellHome_pageState extends State<UcellHome_page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xff6b2d82),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ussd_kodlari_ucell()));
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xff6b2d82),
+                      ),
+                      child: Center(
+                          child: Text(
+                        "USSD kodlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      "USSD kodlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   ),
                   SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xff6b2d82),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  qoshimcha_xizmatlar_ucell()));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xff6b2d82),
+                      ),
+                      child: Center(
+                          child: Text(
+                        "Qo'shimcha\nxizmatlar",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      "Qo'shimcha\nxizmatlar",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   )
                 ],
               ),
