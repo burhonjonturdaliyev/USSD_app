@@ -25,23 +25,135 @@ class MobiuzHome_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _MobiuzHome_pageState extends State<MobiuzHome_page> {
+  final Uri _telegram = Uri.parse("https://t.me/burkhan_dev");
+  final Uri _instagram =
+      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
+  final Uri _admin = Uri.parse("https://t.me/TBA_003");
   final Uri _url = Uri.parse("https://mobi.uz/uz/");
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
+
+  Future<void> _launchTelegram() async {
+    if (!await launchUrl(_telegram)) {
+      throw "Could not open this page $_telegram, Please try later or connect again";
+    }
+  }
+
+  Future<void> _launchInstagram() async {
+    if (!await launchUrl(_instagram)) {
+      throw "Could not open this page $_instagram, Please try later or connect again";
+    }
+  }
+
+  Future<void> _launchAdmin() async {
+    if (!await launchUrl(_admin)) {
+      throw "Could not open this page $_admin, Please try later or connect again";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: GestureDetector(
-              onTap: null,
-              child: const Icon(
-                Icons.share,
-                color: Colors.white,
+      drawer: Drawer(
+        width: 250,
+        backgroundColor: Colors.white,
+        child: ListView(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(color: Colors.white),
+                height: 200,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "Images/all.png",
+                      width: 200,
+                    )
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+            const Divider(
+              thickness: 1,
+              color: Colors.red,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 15, top: 10),
+              child: Text("Ommaviy"),
+            ),
+            ListTile(
+              title: Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  const Icon(
+                    Icons.telegram,
+                    size: 25,
+                    color: Colors.blue,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    "Telegram",
+                    style: TextStyle(fontSize: 18, color: Colors.red),
+                  ),
+                ],
+              ),
+              onTap: _launchTelegram,
+            ),
+            ListTile(
+              // ignore: prefer_const_literals_to_create_immutables
+              title: Row(children: [
+                Image.asset(
+                  "Images/insta.png",
+                  width: 25,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  "Instagram",
+                  style: TextStyle(fontSize: 18, color: Colors.red),
+                )
+              ]),
+              onTap: _launchInstagram,
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.red,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 15, top: 10),
+              child: Text("Adminga bog'lanish uchun"),
+            ),
+            ListTile(
+              // ignore: prefer_const_literals_to_create_immutables
+              title: Row(children: [
+                const Icon(
+                  Icons.telegram,
+                  color: Colors.blue,
+                  size: 25,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  "Admin",
+                  style: TextStyle(fontSize: 18, color: Colors.red),
+                )
+              ]),
+              onTap: _launchAdmin,
+            )
+          ],
+        ),
+      ),
+      appBar: AppBar(
         backgroundColor: Colors.red,
         centerTitle: true,
         // ignore: prefer_const_constructors
@@ -552,11 +664,5 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
         ],
       ),
     );
-  }
-
-  Future<void> _launchUrl() async {
-    if (!await launchUrl(_url)) {
-      throw 'Could not launch $_url';
-    }
   }
 }

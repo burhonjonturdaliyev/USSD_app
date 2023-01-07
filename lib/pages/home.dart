@@ -24,28 +24,138 @@ class Home_page extends StatefulWidget {
 // ignore: camel_case_types
 class _Home_pageState extends State<Home_page> {
   final Uri _uri = Uri.parse("https://uztelecom.uz/index.php");
+  final Uri _telegram = Uri.parse("https://t.me/burkhan_dev");
+  final Uri _instagram =
+      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
+  final Uri _admin = Uri.parse("https://t.me/TBA_003");
   String name = "Uzmobile";
   String info = "Ishonchli mobil aloqa operatori";
   String operator = "1099";
-  String color = "blue";
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_uri)) {
+      throw "Could not open this page $_uri, Please try later or connect again";
+    }
+  }
+
+  Future<void> _launchTelegram() async {
+    if (!await launchUrl(_telegram)) {
+      throw "Could not open this page $_telegram, Please try later or connect again";
+    }
+  }
+
+  Future<void> _launchInstagram() async {
+    if (!await launchUrl(_instagram)) {
+      throw "Could not open this page $_instagram, Please try later or connect again";
+    }
+  }
+
+  Future<void> _launchAdmin() async {
+    if (!await launchUrl(_admin)) {
+      throw "Could not open this page $_admin, Please try later or connect again";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: GestureDetector(
-              onTap: null,
-              child: Icon(
-                Icons.share,
-                color: Colors.white,
+      drawer: Drawer(
+        width: 250,
+        backgroundColor: Colors.white,
+        child: ListView(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(color: Colors.white),
+                height: 200,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "Images/all.png",
+                      width: 200,
+                    )
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+            Divider(
+              thickness: 1,
+              color: Colors.blue,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, top: 10),
+              child: Text("Ommaviy"),
+            ),
+            ListTile(
+              title: Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  Icon(
+                    Icons.telegram,
+                    size: 25,
+                    color: Colors.blue,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Telegram",
+                    style: TextStyle(fontSize: 18, color: Colors.blue),
+                  ),
+                ],
+              ),
+              onTap: _launchTelegram,
+            ),
+            ListTile(
+              // ignore: prefer_const_literals_to_create_immutables
+              title: Row(children: [
+                Image.asset(
+                  "Images/insta.png",
+                  width: 25,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Instagram",
+                  style: TextStyle(fontSize: 18, color: Colors.blue),
+                )
+              ]),
+              onTap: _launchInstagram,
+            ),
+            Divider(
+              thickness: 1,
+              color: Colors.blue,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, top: 10),
+              child: Text("Adminga bog'lanish uchun"),
+            ),
+            ListTile(
+              // ignore: prefer_const_literals_to_create_immutables
+              title: Row(children: [
+                Icon(
+                  Icons.telegram,
+                  color: Colors.blue,
+                  size: 25,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Admin",
+                  style: TextStyle(fontSize: 18, color: Colors.blue),
+                )
+              ]),
+              onTap: _launchAdmin,
+            )
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        // ignore: prefer_const_literals_to_create_immutables
         backgroundColor: Colors.blue,
         centerTitle: true,
         title: Text(
@@ -517,11 +627,5 @@ class _Home_pageState extends State<Home_page> {
         ],
       ),
     );
-  }
-
-  Future<void> _launchUrl() async {
-    if (!await launchUrl(_uri)) {
-      throw "Could not open this page $_uri";
-    }
   }
 }
