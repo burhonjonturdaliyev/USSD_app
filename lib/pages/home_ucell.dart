@@ -13,6 +13,9 @@ import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Qoshimcha%20xizmat
 import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/SMS%20toplamlari/sms_toplamlari_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Tarif%20rejalari/Tarif_rejalari_ucell.dart';
 import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/USSD%20kodlari/ussd_kodlari_ucell.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Internet%20toplamlari/internet_toplamlari_ucell.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/SMS%20toplamlari/sms_toplamlari_ucell.dart';
+import 'package:ussd_kodlari/ucell_full/Operator%20xizmatlari/Tarif%20rejalari/Tarif_rejalari_ucell.dart';
 
 // ignore: camel_case_types
 class UcellHome_page extends StatefulWidget {
