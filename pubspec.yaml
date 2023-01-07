@@ -73,6 +73,8 @@ flutter:
     - Icons/daqiqa.png
     - Icons/servise.png
     - Icons/servise2.png
+    - Images/all.png
+    - Images/insta.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
