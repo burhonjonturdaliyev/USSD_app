@@ -86,7 +86,7 @@ class _Home_pageState extends State<Home_page> {
                   Icon(
                     Icons.video_library,
                     size: 25,
-                    color: Colors.red,
+                    color: Color.fromARGB(255, 255, 67, 53),
                   ),
                   SizedBox(
                     width: 10,
