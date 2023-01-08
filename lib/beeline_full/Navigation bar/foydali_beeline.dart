@@ -45,7 +45,7 @@ class Foydali_Beeline extends StatelessWidget {
 // ignore: non_constant_identifier_names
 Widget foydali_Beeline(foydali_models models) {
   return Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(6.0),
     child: GestureDetector(
       onTap: () {
         FlutterPhoneDirectCaller.callNumber(models.code);
@@ -58,9 +58,9 @@ Widget foydali_Beeline(foydali_models models) {
             // ignore: prefer_const_literals_to_create_immutables
             boxShadow: [
               const BoxShadow(
-                  color: Colors.black45,
+                  color: Colors.black26,
                   blurRadius: 1,
-                  spreadRadius: 1,
+                  spreadRadius: 0,
                   offset: Offset(0, 0))
             ]),
         child: Padding(
@@ -70,12 +70,11 @@ Widget foydali_Beeline(foydali_models models) {
             children: [
               Text(
                 models.name,
-                style: const TextStyle(color: Colors.black, fontSize: 16),
+                style: const TextStyle(color: Color(0xffffc904), fontSize: 16),
               ),
               Text(
                 models.code,
-                style:
-                    const TextStyle(color: Color.fromARGB(255, 112, 107, 107)),
+                style: const TextStyle(color: Color.fromARGB(113, 255, 201, 4)),
               ),
             ],
           ),

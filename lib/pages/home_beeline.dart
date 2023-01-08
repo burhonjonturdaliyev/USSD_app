@@ -5,6 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ussd_kodlari/Mobiuz_full/Mobiuz_bar.dart';
+import 'package:ussd_kodlari/beeline_full/Operator_xizmatlari/daqiqa_toplamlari/daqiqa_toplamlari_beeline.dart';
+import 'package:ussd_kodlari/beeline_full/Operator_xizmatlari/internet_toplamlari/internet_toplamlari_beeline.dart';
+import 'package:ussd_kodlari/beeline_full/Operator_xizmatlari/qoshimcha_xizmatlar/qoshimcha_xizmatlar_beeline.dart';
+import 'package:ussd_kodlari/beeline_full/Operator_xizmatlari/sms_toplamlari/sms_toplamlari_beeline.dart';
+import 'package:ussd_kodlari/beeline_full/Operator_xizmatlari/tarif_rejalari/tarif_rejalari_beeline.dart';
+import 'package:ussd_kodlari/beeline_full/Operator_xizmatlari/ussd_kodlari/ussd_kodlari_beeline.dart';
 import 'package:ussd_kodlari/navigatorbar/bar.dart';
 import 'package:ussd_kodlari/ucell_full/ucell_bar.dart';
 
@@ -19,10 +25,10 @@ class Beeline_Homepage extends StatefulWidget {
 // ignore: camel_case_types
 class _Beeline_HomepageState extends State<Beeline_Homepage> {
   final Uri _url = Uri.parse('https://beeline.uz/uz');
-  final Uri _telegram = Uri.parse("https://t.me/burkhan_dev");
+  final Uri _telegram =
+      Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
       Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
-  final Uri _admin = Uri.parse("https://t.me/TBA_003");
 
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
@@ -42,12 +48,6 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
     }
   }
 
-  Future<void> _launchAdmin() async {
-    if (!await launchUrl(_admin)) {
-      throw "Could not open this page $_admin, Please try later or connect again";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,19 +56,16 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
         backgroundColor: Colors.white,
         child: ListView(
           children: [
-            Expanded(
-              child: Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "Images/all.png",
-                      width: 200,
-                    )
-                  ],
-                ),
+            SizedBox(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "Images/all.png",
+                    width: 200,
+                  )
+                ],
               ),
             ),
             const Divider(
@@ -83,15 +80,15 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
               title: Row(
                 children: [
                   const Icon(
-                    Icons.telegram,
+                    Icons.video_library,
                     size: 25,
-                    color: Colors.blue,
+                    color: Color(0xffffc904),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
                   const Text(
-                    "Telegram",
+                    "YouTube",
                     style: TextStyle(fontSize: 18, color: Color(0xffffc904)),
                   ),
                 ],
@@ -125,8 +122,8 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
             ListTile(
               title: Row(children: [
                 const Icon(
-                  Icons.telegram,
-                  color: Colors.blue,
+                  Icons.call_outlined,
+                  color: Color(0xffffc904),
                   size: 25,
                 ),
                 const SizedBox(
@@ -137,7 +134,9 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
                   style: TextStyle(fontSize: 18, color: Color(0xffffc904)),
                 )
               ]),
-              onTap: _launchAdmin,
+              onTap: () {
+                FlutterPhoneDirectCaller.callNumber("+998906936594");
+              },
             )
           ],
         ),
@@ -393,48 +392,66 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        const BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffffc904),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const tarif_rejalari_beeline()));
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          const BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xffffc904),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "Tarif rejalari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Tarif rejalari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   ),
                   const SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        const BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffffc904),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const internet_toplamlari_beeline()));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          const BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xffffc904),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "Internet \nto'plamlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Internet \nto'plamlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   )
                 ],
               ),
@@ -444,48 +461,66 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        const BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffffc904),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const sms_toplamlari_beeline()));
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          const BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xffffc904),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "SMS\nto'plamlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "SMS\nto'plamlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   ),
                   const SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        const BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffffc904),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const daqiqa_toplamlari_beeline()));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          const BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xffffc904),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "Daqiqa\nto'plamlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Daqiqa\nto'plamlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   )
                 ],
               ),
@@ -495,48 +530,62 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        const BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffffc904),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ussd_kodlari_beeline())),
+                    child: Container(
+                      height: 100,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          const BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xffffc904),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "USSD kodlari",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "USSD kodlari",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   ),
                   const SizedBox(
                     width: 40,
                   ),
-                  Container(
-                    width: 150,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        const BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 15,
-                            spreadRadius: -13,
-                            color: Colors.black54)
-                      ],
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffffc904),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const qoshimcha_xizmatlar_beeline())),
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          const BoxShadow(
+                              offset: Offset(0, 17),
+                              blurRadius: 15,
+                              spreadRadius: -13,
+                              color: Colors.black54)
+                        ],
+                        borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xffffc904),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "Qo'shimcha\nxizmatlar",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Qo'shimcha\nxizmatlar",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
                   )
                 ],
               ),

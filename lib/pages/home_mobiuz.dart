@@ -25,10 +25,10 @@ class MobiuzHome_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _MobiuzHome_pageState extends State<MobiuzHome_page> {
-  final Uri _telegram = Uri.parse("https://t.me/burkhan_dev");
+  final Uri _telegram =
+      Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
       Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
-  final Uri _admin = Uri.parse("https://t.me/TBA_003");
   final Uri _url = Uri.parse("https://mobi.uz/uz/");
 
   Future<void> _launchUrl() async {
@@ -49,12 +49,6 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
     }
   }
 
-  Future<void> _launchAdmin() async {
-    if (!await launchUrl(_admin)) {
-      throw "Could not open this page $_admin, Please try later or connect again";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,19 +58,16 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
         child: ListView(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Expanded(
-              child: Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "Images/all.png",
-                      width: 200,
-                    )
-                  ],
-                ),
+            SizedBox(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "Images/all.png",
+                    width: 200,
+                  )
+                ],
               ),
             ),
             const Divider(
@@ -92,15 +83,15 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   const Icon(
-                    Icons.telegram,
+                    Icons.video_library,
                     size: 25,
-                    color: Colors.blue,
+                    color: Colors.red,
                   ),
                   const SizedBox(
                     width: 10,
                   ),
                   const Text(
-                    "Telegram",
+                    "YouTube",
                     style: TextStyle(fontSize: 18, color: Colors.red),
                   ),
                 ],
@@ -136,8 +127,8 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
               // ignore: prefer_const_literals_to_create_immutables
               title: Row(children: [
                 const Icon(
-                  Icons.telegram,
-                  color: Colors.blue,
+                  Icons.call_outlined,
+                  color: Colors.red,
                   size: 25,
                 ),
                 const SizedBox(
@@ -148,7 +139,9 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
                   style: TextStyle(fontSize: 18, color: Colors.red),
                 )
               ]),
-              onTap: _launchAdmin,
+              onTap: () {
+                FlutterPhoneDirectCaller.callNumber("+998906936594");
+              },
             )
           ],
         ),

@@ -27,10 +27,10 @@ class _UcellHome_pageState extends State<UcellHome_page> {
   @override
   // ignore: override_on_non_overriding_member
   final Uri _url = Uri.parse("https://ucell.uz/uz/subscribers");
-  final Uri _telegram = Uri.parse("https://t.me/burkhan_dev");
+  final Uri _telegram =
+      Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
       Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
-  final Uri _admin = Uri.parse("https://t.me/TBA_003");
 
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
@@ -50,12 +50,6 @@ class _UcellHome_pageState extends State<UcellHome_page> {
     }
   }
 
-  Future<void> _launchAdmin() async {
-    if (!await launchUrl(_admin)) {
-      throw "Could not open this page $_admin, Please try later or connect again";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,19 +59,16 @@ class _UcellHome_pageState extends State<UcellHome_page> {
         child: ListView(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Expanded(
-              child: Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "Images/all.png",
-                      width: 200,
-                    )
-                  ],
-                ),
+            SizedBox(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "Images/all.png",
+                    width: 200,
+                  )
+                ],
               ),
             ),
             const Divider(
@@ -93,15 +84,15 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   const Icon(
-                    Icons.telegram,
+                    Icons.video_library,
                     size: 25,
-                    color: Colors.blue,
+                    color: Color(0xff6b2d82),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
                   const Text(
-                    "Telegram",
+                    "YouTube",
                     style: TextStyle(fontSize: 18, color: Color(0xff6b2d82)),
                   ),
                 ],
@@ -137,8 +128,8 @@ class _UcellHome_pageState extends State<UcellHome_page> {
               // ignore: prefer_const_literals_to_create_immutables
               title: Row(children: [
                 const Icon(
-                  Icons.telegram,
-                  color: Colors.blue,
+                  Icons.call_outlined,
+                  color: Color(0xff6b2d82),
                   size: 25,
                 ),
                 const SizedBox(
@@ -149,7 +140,9 @@ class _UcellHome_pageState extends State<UcellHome_page> {
                   style: TextStyle(fontSize: 18, color: Color(0xff6b2d82)),
                 )
               ]),
-              onTap: _launchAdmin,
+              onTap: () {
+                FlutterPhoneDirectCaller.callNumber("+998906936594");
+              },
             )
           ],
         ),

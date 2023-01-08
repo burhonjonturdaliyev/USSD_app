@@ -24,10 +24,10 @@ class Home_page extends StatefulWidget {
 // ignore: camel_case_types
 class _Home_pageState extends State<Home_page> {
   final Uri _uri = Uri.parse("https://uztelecom.uz/index.php");
-  final Uri _telegram = Uri.parse("https://t.me/burkhan_dev");
+  final Uri _telegram =
+      Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
       Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
-  final Uri _admin = Uri.parse("https://t.me/TBA_003");
   String name = "Uzmobile";
   String info = "Ishonchli mobil aloqa operatori";
   String operator = "1099";
@@ -50,12 +50,6 @@ class _Home_pageState extends State<Home_page> {
     }
   }
 
-  Future<void> _launchAdmin() async {
-    if (!await launchUrl(_admin)) {
-      throw "Could not open this page $_admin, Please try later or connect again";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,19 +59,16 @@ class _Home_pageState extends State<Home_page> {
         child: ListView(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(color: Colors.white),
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "Images/all.png",
-                      width: 200,
-                    )
-                  ],
-                ),
+            SizedBox(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "Images/all.png",
+                    width: 200,
+                  )
+                ],
               ),
             ),
             Divider(
@@ -93,15 +84,15 @@ class _Home_pageState extends State<Home_page> {
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   Icon(
-                    Icons.telegram,
+                    Icons.video_library,
                     size: 25,
-                    color: Colors.blue,
+                    color: Colors.red,
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Text(
-                    "Telegram",
+                    "YouTube",
                     style: TextStyle(fontSize: 18, color: Colors.blue),
                   ),
                 ],
@@ -137,7 +128,7 @@ class _Home_pageState extends State<Home_page> {
               // ignore: prefer_const_literals_to_create_immutables
               title: Row(children: [
                 Icon(
-                  Icons.telegram,
+                  Icons.call_outlined,
                   color: Colors.blue,
                   size: 25,
                 ),
@@ -149,7 +140,9 @@ class _Home_pageState extends State<Home_page> {
                   style: TextStyle(fontSize: 18, color: Colors.blue),
                 )
               ]),
-              onTap: _launchAdmin,
+              onTap: () {
+                FlutterPhoneDirectCaller.callNumber("+998906936594");
+              },
             )
           ],
         ),
