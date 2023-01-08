@@ -65,7 +65,13 @@ Widget operators(models_operator operator) {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 // ignore: prefer_const_literals_to_create_immutables
-                children: [Expanded(child: Text(operator.info))],
+                children: [
+                  Expanded(
+                      child: Text(
+                    operator.info,
+                    style: TextStyle(color: Color(0xffffc904)),
+                  ))
+                ],
               ),
             ),
             SizedBox(
@@ -73,7 +79,8 @@ Widget operators(models_operator operator) {
             ),
             Text(
               operator.code,
-              style: const TextStyle(color: Colors.grey, fontSize: 16),
+              style: TextStyle(
+                  color: Color.fromARGB(77, 255, 201, 4), fontSize: 16),
             ),
             const SizedBox(
               height: 10,
