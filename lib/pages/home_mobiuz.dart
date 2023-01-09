@@ -28,7 +28,7 @@ class _MobiuzHome_pageState extends State<MobiuzHome_page> {
   final Uri _telegram =
       Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
-      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
+      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_");
   final Uri _url = Uri.parse("https://mobi.uz/uz/");
 
   Future<void> _launchUrl() async {

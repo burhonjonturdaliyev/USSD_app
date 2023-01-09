@@ -28,7 +28,7 @@ class _Beeline_HomepageState extends State<Beeline_Homepage> {
   final Uri _telegram =
       Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
-      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
+      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_");
 
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {

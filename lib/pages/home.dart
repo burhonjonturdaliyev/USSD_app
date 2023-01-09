@@ -23,11 +23,11 @@ class Home_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Home_pageState extends State<Home_page> {
-  final Uri _uri = Uri.parse("https://uztelecom.uz/index.php");
+  final Uri _uri = Uri.parse("https://uztelecom.uz/");
   final Uri _telegram =
       Uri.parse("https://www.youtube.com/@BurhonjonTurdaliyev");
   final Uri _instagram =
-      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_/");
+      Uri.parse("https://www.instagram.com/burhonjon_turdaliyev_");
   String name = "Uzmobile";
   String info = "Ishonchli mobil aloqa operatori";
   String operator = "1099";
